@@ -1,0 +1,41 @@
+GET http://localhost:5212/appointments 
+
+###
+GET http://localhost:5212/appointments/1
+
+### Create Appointment
+POST http://localhost:5212/appointments
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "doctor": "Dr. Smith",
+    "appointmentDateTime": "2023-04-05T14:30:00",
+    "duration": "01:00:00",
+    "appointmentType": "General Checkup",
+    "notes": "Annual physical examination",
+    "status": "Ongoing",
+    "createdAt": "2025-03-31T14:30:00"
+}
+
+### Update Appointment
+PUT http://localhost:5212/appointments/1
+Content-Type: application/json
+
+{
+    "name": "John Smith",
+    "doctor": "Dr. Miller",
+    "appointmentDateTime": "2025-04-10T10:00:00",
+    "duration": "00:30:00",
+    "appointmentType": "Follow-up",
+    "notes": "Post-surgery checkup",
+    "status": "Confirmed",
+    "createdAt": "2025-03-31T14:30:00"
+}
+
+### Delete Appointment
+DELETE http://localhost:5212/appointments/2
+
+
+
+

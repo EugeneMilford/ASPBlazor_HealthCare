@@ -26,3 +26,4 @@ D:\Projects\HealthCare\HealthCare.Backend\obj\Debug\net9.0\refint\HealthCare.Bac
 D:\Projects\HealthCare\HealthCare.Backend\obj\Debug\net9.0\HealthCare.Backend.pdb
 D:\Projects\HealthCare\HealthCare.Backend\obj\Debug\net9.0\HealthCare.Backend.genruntimeconfig.cache
 D:\Projects\HealthCare\HealthCare.Backend\obj\Debug\net9.0\ref\HealthCare.Backend.dll
+D:\Projects\HealthCare\HealthCare.Backend\obj\Debug\net9.0\HealthCare.Backend.sourcelink.json
