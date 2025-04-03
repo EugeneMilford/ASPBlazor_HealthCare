@@ -1,12 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace HealthCare.Backend.Dtos;
 
 public record class UpdateAppointmentDto
 (
-    string Name,
-    string Doctor,
-    DateTime AppointmentDateTime,
+    [Required][StringLength(50)]string Name,
+    [Required][StringLength(50)]string Doctor,
+    [Required]DateTime AppointmentDateTime,
     TimeSpan Duration,
-    string AppointmentType,
+    [Required][StringLength(50)]string AppointmentType,
     string? Notes,
-    string Status,
-    DateTime CreatedAt);
+    [Required][StringLength(50)]string Status,
+    [Required]DateTime CreatedAt);
+
