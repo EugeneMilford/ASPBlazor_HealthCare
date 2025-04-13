@@ -1,12 +1,14 @@
 namespace HealthCare.Backend.Dtos;
 
-public record class AppointmentDto(
+public record class AppointmentSummaryDto
+(
     int PatientId,
-    string Name,
+    string Name, 
     string Doctor,
     DateTime AppointmentDateTime,
     TimeSpan Duration,
     string AppointmentType,
-    string? Notes,
+    string Notes,
     string Status,
-    DateTime CreatedAt);
+    DateTime CreatedAt
+);

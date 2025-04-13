@@ -1,7 +1,8 @@
+###
 GET http://localhost:5212/appointments 
 
 ###
-GET http://localhost:5212/appointments/1
+GET http://localhost:5212/appointments/3
 
 ### Create Appointment
 POST http://localhost:5212/appointments
@@ -19,17 +20,17 @@ Content-Type: application/json
 }
 
 ### Update Appointment
-PUT http://localhost:5212/appointments/1
+PUT http://localhost:5212/appointments/3
 Content-Type: application/json
 
 {
     "name": "John Smith",
-    "doctor": "Dr. Miller",
+    "doctorId": 2,
     "appointmentDateTime": "2025-04-10T10:00:00",
     "duration": "00:30:00",
     "appointmentType": "Follow-up",
     "notes": "Post-surgery checkup",
-    "status": "Confirmed",
+    "statusId": 3,
     "createdAt": "2025-03-31T14:30:00"
 }
 
@@ -37,16 +38,16 @@ Content-Type: application/json
 DELETE http://localhost:5212/appointments/2
 
 ###
-POST http://localhost:5212/appointments
+PUT http://localhost:5212/appointments/3
 Content-Type: application/json
 
 {
-    "name": "Ian Ross",
+    "name": "Micahel Wainwright",
     "doctorId": 4,
-    "appointmentDateTime": "2024-11-20T10:00:00",
+    "appointmentDateTime": "2025-02-20T10:00:00",
     "duration": "00:45:00",
     "appointmentType": "Start",
-    "notes": "Post-surgery checkup",
+    "notes": "Appointment",
     "statusId": 2
 }
 

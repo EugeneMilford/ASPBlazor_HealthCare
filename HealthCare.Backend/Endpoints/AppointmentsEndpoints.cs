@@ -3,6 +3,7 @@ using HealthCare.Backend.Data;
 using HealthCare.Backend.Dtos;
 using HealthCare.Backend.Entities;
 using HealthCare.Backend.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace HealthCare.Backend.Endpoints;
 
@@ -10,124 +11,71 @@ public static class AppointmentsEndpoints
 {
     const string GetAppointmentEndpointName = "GetAppointment";
 
-    private static readonly List<AppointmentDto> appointments = [
-            new (
-                1,
-                "John Doe",
-                "Dr. Smith",
-                new DateTime(2025, 04, 08, 10, 30, 0),
-                Duration: TimeSpan.FromHours(1),
-                "Check-up",
-                "Follow up on previous issues.",
-                "Scheduled",
-                new DateTime(2025, 04, 01, 11, 30, 0)
-            ),
-            new (
-                2,
-                "Jane Doe",
-                "Dr. Adams",
-                new DateTime(2025, 04, 09, 14, 00, 0),
-                Duration: TimeSpan.FromHours(0.5),
-                "Consultation",
-                "New patient, first consultation.",
-                "Confirmed",
-                new DateTime(2025, 04, 01, 11, 30, 0)
-            ),
-            new (
-                3,
-                "Alice Johnson",
-                "Dr. Lee",
-                new DateTime(2025, 04, 10, 09, 00, 0),
-                Duration: TimeSpan.FromHours(1),
-                "Therapy",
-                null,
-                "Completed",
-                new DateTime(2025, 04, 01, 11, 30, 0)
-            ),
-            new (
-                4,
-                "Bob Smith",
-                "Dr. Clark",
-                new DateTime(2025, 04, 11, 11, 15, 0),
-                Duration: TimeSpan.FromHours(1.5),
-                "Surgery Consultation",
-                "Discuss surgery options.",
-                "Pending",
-                new DateTime(2025, 04, 01, 11, 30, 0)
-            ),
-            new (
-                5,
-                "Charlie Brown",
-                "Dr. Wilson",
-                new DateTime(2025, 04, 12, 16, 45, 0),
-                Duration: TimeSpan.FromHours(1),
-                "Routine Check",
-                "Check blood pressure and cholesterol.",
-                "Cancelled",
-                new DateTime(2025, 04, 01, 11, 30, 0)
-            )
-    ];
-
     public static RouteGroupBuilder MapAppointmentsEndpoints(this WebApplication app)
     {
         var group = app.MapGroup("appointments").WithParameterValidation();
 
         // GET /appointments
-        group.MapGet("/", ()=> appointments);
+        group.MapGet("/", (HealthCareContext dbContext) => 
+            dbContext.Appointments
+                .Include(appointment => appointment.Doctor)
+                .Select(appointment => appointment.ToAppointmentSummaryDto())
+                .AsNoTracking());
 
-        //Get /appointments/1
-        group.MapGet("/{id}", (int id) => 
+        // GET /appointments/1
+        group.MapGet("/{id}", (int id, HealthCareContext dbContext) => 
         { 
-            AppointmentDto? appointment = appointments.Find(appointment => appointment.PatientId == id);
-
-            return appointment is null ? Results.NotFound() : Results.Ok(appointment);
+            // Find the Appointment object instead of AppointmentSummaryDto
+            Appointment? appointment = dbContext.Appointments.Find(id);
+            
+            return appointment is null ? 
+                Results.NotFound() : 
+                Results.Ok(appointment.ToAppointmentDetailsDto());
         }).WithName(GetAppointmentEndpointName);
 
         // POST /appointments
         group.MapPost("/", (CreateAppointmentDto newAppointment, HealthCareContext dbContext) => 
         {
             Appointment appointment = newAppointment.ToEntity();
-            appointment.Doctor = dbContext.Doctors.Find(newAppointment.DoctorId);
-            appointment.Status = dbContext.Statusses.Find(newAppointment.StatusId);
 
             dbContext.Appointments.Add(appointment);
             dbContext.SaveChanges();
 
             return Results.CreatedAtRoute(
                 GetAppointmentEndpointName, 
-                new { id = appointment.PatientId}, 
-                appointment.ToDto());
+                new { id = appointment.PatientId }, 
+                appointment.ToAppointmentDetailsDto());
         });
-
-
 
         // PUT /appointments/{id}
-        group.MapPut("/{id}", (int id, UpdateAppointmentDto updatedAppointment) =>
+        group.MapPut("/{id}", (int id, UpdateAppointmentDto updatedAppointment, HealthCareContext dbContext) =>
         {
-            var index = appointments.FindIndex(appointment => appointment.PatientId == id);
+            var existingAppointment = dbContext.Appointments.Find(id);
 
-            appointments[index] = new AppointmentDto(
-                id,
-                updatedAppointment.Name,
-                updatedAppointment.Doctor,
-                updatedAppointment.AppointmentDateTime,
-                updatedAppointment.Duration,
-                updatedAppointment.AppointmentType,
-                updatedAppointment.Notes,
-                updatedAppointment.Status,
-                updatedAppointment.CreatedAt
-            );
+            if (existingAppointment == null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingAppointment)
+                .CurrentValues
+                .SetValues(updatedAppointment.ToEntity(id));
+
+            dbContext.SaveChanges();
 
             return Results.NoContent();
         });
 
-        // DELETE /appointments/1
-        group.MapDelete("/{id}", (int id) => 
+        // DELETE /games/1
+        group.MapDelete("/{id}", (int id, HealthCareContext dbContext) =>
         {
-            appointments.RemoveAll(appointment => appointment.PatientId == id);
+            dbContext.Appointments
+                .Where(appointment => appointment.PatientId == id)
+                .ExecuteDelete();
 
             return Results.NoContent();
         });
+
         return group;
     }
 }
