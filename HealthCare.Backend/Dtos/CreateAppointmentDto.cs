@@ -5,11 +5,12 @@ namespace HealthCare.Backend.Dtos;
 public record class CreateAppointmentDto
 (
     [Required][StringLength(50)]string Name,
-    [Required][StringLength(50)]string Doctor,
+    int DoctorId,
     [Required]DateTime AppointmentDateTime,
     TimeSpan Duration,
     [Required][StringLength(50)]string AppointmentType,
     string? Notes,
-    [Required][StringLength(50)]string Status,
+    int StatusId,
     [Required]DateTime CreatedAt);
+
 

@@ -36,6 +36,19 @@ Content-Type: application/json
 ### Delete Appointment
 DELETE http://localhost:5212/appointments/2
 
+###
+POST http://localhost:5212/appointments
+Content-Type: application/json
+
+{
+    "name": "Ian Ross",
+    "doctorId": 4,
+    "appointmentDateTime": "2024-11-20T10:00:00",
+    "duration": "00:45:00",
+    "appointmentType": "Start",
+    "notes": "Post-surgery checkup",
+    "statusId": 2
+}
 
 
 

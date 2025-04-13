@@ -1,5 +1,8 @@
 using System;
+using HealthCare.Backend.Data;
 using HealthCare.Backend.Dtos;
+using HealthCare.Backend.Entities;
+using HealthCare.Backend.Mapping;
 
 namespace HealthCare.Backend.Endpoints;
 
@@ -70,10 +73,10 @@ public static class AppointmentsEndpoints
         var group = app.MapGroup("appointments").WithParameterValidation();
 
         // GET /appointments
-        app.MapGet("/", ()=> appointments);
+        group.MapGet("/", ()=> appointments);
 
         //Get /appointments/1
-        app.MapGet("/{id}", (int id) => 
+        group.MapGet("/{id}", (int id) => 
         { 
             AppointmentDto? appointment = appointments.Find(appointment => appointment.PatientId == id);
 
@@ -81,27 +84,25 @@ public static class AppointmentsEndpoints
         }).WithName(GetAppointmentEndpointName);
 
         // POST /appointments
-        app.MapPost("/", (CreateAppointmentDto newAppointment) => 
+        group.MapPost("/", (CreateAppointmentDto newAppointment, HealthCareContext dbContext) => 
         {
-            AppointmentDto appointment = new(
-                appointments.Count + 1,
-                newAppointment.Name,
-                newAppointment.Doctor,
-                newAppointment.AppointmentDateTime,
-                newAppointment.Duration,
-                newAppointment.AppointmentType,
-                newAppointment.Notes,
-                newAppointment.Status,
-                newAppointment.CreatedAt
-            );
+            Appointment appointment = newAppointment.ToEntity();
+            appointment.Doctor = dbContext.Doctors.Find(newAppointment.DoctorId);
+            appointment.Status = dbContext.Statusses.Find(newAppointment.StatusId);
 
-            appointments.Add(appointment);
+            dbContext.Appointments.Add(appointment);
+            dbContext.SaveChanges();
 
-            return Results.CreatedAtRoute(GetAppointmentEndpointName, new { id = appointment.PatientId }, appointment);
-        }).WithParameterValidation();
+            return Results.CreatedAtRoute(
+                GetAppointmentEndpointName, 
+                new { id = appointment.PatientId}, 
+                appointment.ToDto());
+        });
+
+
 
         // PUT /appointments/{id}
-        app.MapPut("/{id}", (int id, UpdateAppointmentDto updatedAppointment) =>
+        group.MapPut("/{id}", (int id, UpdateAppointmentDto updatedAppointment) =>
         {
             var index = appointments.FindIndex(appointment => appointment.PatientId == id);
 
@@ -121,7 +122,7 @@ public static class AppointmentsEndpoints
         });
 
         // DELETE /appointments/1
-        app.MapDelete("/{id}", (int id) => 
+        group.MapDelete("/{id}", (int id) => 
         {
             appointments.RemoveAll(appointment => appointment.PatientId == id);
 
