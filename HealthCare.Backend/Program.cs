@@ -11,7 +11,11 @@ var app = builder.Build();
 
 app.MapAppointmentsEndpoints();
 
-app.MigrateDb();
+app.MapDoctorsEndpoints();
+
+app.MapStatusEndpoints();
+
+await app.MigrateDbAsync();
 
 app.Run();
 

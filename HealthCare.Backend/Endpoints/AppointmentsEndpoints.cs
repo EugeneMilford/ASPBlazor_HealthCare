@@ -16,17 +16,19 @@ public static class AppointmentsEndpoints
         var group = app.MapGroup("appointments").WithParameterValidation();
 
         // GET /appointments
-        group.MapGet("/", (HealthCareContext dbContext) => 
-            dbContext.Appointments
+        group.MapGet("/", async (HealthCareContext dbContext) => 
+            await dbContext.Appointments
                 .Include(appointment => appointment.Doctor)
+                .Include(appointment => appointment.Status)
                 .Select(appointment => appointment.ToAppointmentSummaryDto())
-                .AsNoTracking());
+                .AsNoTracking()
+                .ToListAsync());
 
         // GET /appointments/1
-        group.MapGet("/{id}", (int id, HealthCareContext dbContext) => 
+        group.MapGet("/{id}", async (int id, HealthCareContext dbContext) => 
         { 
             // Find the Appointment object instead of AppointmentSummaryDto
-            Appointment? appointment = dbContext.Appointments.Find(id);
+            Appointment? appointment = await dbContext.Appointments.FindAsync(id);
             
             return appointment is null ? 
                 Results.NotFound() : 
@@ -34,12 +36,12 @@ public static class AppointmentsEndpoints
         }).WithName(GetAppointmentEndpointName);
 
         // POST /appointments
-        group.MapPost("/", (CreateAppointmentDto newAppointment, HealthCareContext dbContext) => 
+        group.MapPost("/", async (CreateAppointmentDto newAppointment, HealthCareContext dbContext) => 
         {
             Appointment appointment = newAppointment.ToEntity();
 
             dbContext.Appointments.Add(appointment);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
             return Results.CreatedAtRoute(
                 GetAppointmentEndpointName, 
@@ -47,13 +49,13 @@ public static class AppointmentsEndpoints
                 appointment.ToAppointmentDetailsDto());
         });
 
-        // PUT /appointments/{id}
-        group.MapPut("/{id}", (int id, UpdateAppointmentDto updatedAppointment, HealthCareContext dbContext) =>
-        {
-            var existingAppointment = dbContext.Appointments.Find(id);
-
-            if (existingAppointment == null)
-            {
+        // PUT /appointments
+        group.MapPut("/{id}", async (int id, UpdateAppointmentDto updatedAppointment, HealthCareContext dbContext) => {
+            Console.WriteLine($"Looking for appointment with ID: {id}");
+            var existingAppointment = await dbContext.Appointments.FindAsync(id);
+    
+            if (existingAppointment == null) {
+                Console.WriteLine("Appointment not found");
                 return Results.NotFound();
             }
 
@@ -61,17 +63,17 @@ public static class AppointmentsEndpoints
                 .CurrentValues
                 .SetValues(updatedAppointment.ToEntity(id));
 
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
             return Results.NoContent();
         });
 
         // DELETE /games/1
-        group.MapDelete("/{id}", (int id, HealthCareContext dbContext) =>
+        group.MapDelete("/{id}", async (int id, HealthCareContext dbContext) =>
         {
-            dbContext.Appointments
+            await dbContext.Appointments
                 .Where(appointment => appointment.PatientId == id)
-                .ExecuteDelete();
+                .ExecuteDeleteAsync();
 
             return Results.NoContent();
         });
