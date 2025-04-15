@@ -1,0 +1,220 @@
+@page "/appointments"
+@using Models
+
+<PageTitle>Scheduled Appointments</PageTitle>
+
+<div class="appointment-container">
+    <h2 class="appointment-header">Upcoming Appointments</h2>
+    
+    <div class="appointment-list">
+        @foreach (var appointment in appointments)
+        {
+            <div class="appointment-card @appointment.Status.ToLower()">
+                <div class="appointment-card-header">
+                    <span class="patient-name">@appointment.Name</span>
+                    <span class="appointment-status">@appointment.Status</span>
+                </div>
+                
+                <div class="appointment-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Doctor:</span>
+                        <span class="detail-value">@appointment.Doctor</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Date/Time:</span>
+                        <span class="detail-value">@appointment.AppointmentDateTime.ToString("f")</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Duration:</span>
+                        <span class="detail-value">@appointment.Duration.ToString(@"hh\:mm")</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Type:</span>
+                        <span class="detail-value">@appointment.AppointmentType</span>
+                    </div>
+                </div>
+                
+                @if (!string.IsNullOrEmpty(appointment.Notes))
+                {
+                    <div class="appointment-notes">
+                        <span class="notes-label">Notes:</span>
+                        <p>@appointment.Notes</p>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .appointment-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .appointment-header {
+        color: #2c3e50;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .appointment-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .appointment-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 20px;
+        border-left: 5px solid #3498db;
+    }
+
+    .appointment-card.confirmed {
+        border-left-color: #2ecc71;
+    }
+
+    .appointment-card.pending {
+        border-left-color: #f39c12;
+    }
+
+    .appointment-card.cancelled {
+        border-left-color: #e74c3c;
+        opacity: 0.7;
+    }
+
+    .appointment-card.completed {
+        border-left-color: #9b59b6;
+    }
+
+    .appointment-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .patient-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #2c3e50;
+    }
+
+    .appointment-status {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .confirmed .appointment-status {
+        background-color: #d5f5e3;
+        color: #27ae60;
+    }
+
+    .pending .appointment-status {
+        background-color: #fdebd0;
+        color: #f39c12;
+    }
+
+    .cancelled .appointment-status {
+        background-color: #fadbd8;
+        color: #e74c3c;
+    }
+
+    .completed .appointment-status {
+        background-color: #e8daef;
+        color: #8e44ad;
+    }
+
+    .appointment-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .detail-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #7f8c8d;
+    }
+
+    .detail-value {
+        color: #34495e;
+    }
+
+    .appointment-notes {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px dashed #eee;
+    }
+
+    .notes-label {
+        font-weight: bold;
+        color: #7f8c8d;
+        display: block;
+        margin-bottom: 5px;
+    }
+</style>
+
+@code {
+    private AppointmentSummary[] appointments = 
+    [
+        new() {
+            PatientId = 1,
+            Name = "John Smith",
+            Doctor = "Dr. Emily Johnson",
+            AppointmentDateTime = new DateTime(2023, 12, 15, 14, 30, 0),
+            Duration = TimeSpan.FromMinutes(30),
+            AppointmentType = "General Checkup",
+            Notes = "Annual physical examination",
+            Status = "Confirmed",
+            CreatedAt = DateTime.Now.AddDays(-7)
+        },
+        new() {
+            PatientId = 2,
+            Name = "Sarah Williams",
+            Doctor = "Dr. Michael Chen",
+            AppointmentDateTime = new DateTime(2023, 12, 16, 10, 0, 0),
+            Duration = TimeSpan.FromMinutes(60),
+            AppointmentType = "Consultation",
+            Notes = "Follow-up for test results",
+            Status = "Pending",
+            CreatedAt = DateTime.Now.AddDays(-3)
+        },
+        new() {
+            PatientId = 3,
+            Name = "Robert Johnson",
+            Doctor = "Dr. Lisa Park",
+            AppointmentDateTime = new DateTime(2023, 12, 17, 9, 15, 0),
+            Duration = TimeSpan.FromMinutes(45),
+            AppointmentType = "Dental Cleaning",
+            Notes = "No extra notes",
+            Status = "Completed",
+            CreatedAt = DateTime.Now.AddDays(-14)
+        },
+        new() {
+            PatientId = 4,
+            Name = "Maria Garcia",
+            Doctor = "Dr. David Wilson",
+            AppointmentDateTime = new DateTime(2023, 12, 18, 16, 0, 0),
+            Duration = TimeSpan.FromMinutes(20),
+            AppointmentType = "Vaccination",
+            Notes = "Flu shot",
+            Status = "Cancelled",
+            CreatedAt = DateTime.Now.AddDays(-5)
+        }
+    ];
+}

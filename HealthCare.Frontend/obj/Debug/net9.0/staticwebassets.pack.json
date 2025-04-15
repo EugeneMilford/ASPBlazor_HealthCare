@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HealthCare.Frontend.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HealthCare.Frontend.rujrsdriu1.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HealthCare.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HealthCare.Frontend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.HealthCare.Frontend.props",
+      "PackagePath": "build\\HealthCare.Frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.HealthCare.Frontend.props",
+      "PackagePath": "buildMultiTargeting\\HealthCare.Frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.HealthCare.Frontend.props",
+      "PackagePath": "buildTransitive\\HealthCare.Frontend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
