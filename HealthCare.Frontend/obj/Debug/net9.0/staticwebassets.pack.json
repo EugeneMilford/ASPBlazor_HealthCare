@@ -9,6 +9,26 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-appointments.jpeg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-appointments.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-contact.jpeg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-contact.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-departments.jpeg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-departments.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-doctors.jpeg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-doctors.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-services.jpeg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-services.jpeg"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HealthCare.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

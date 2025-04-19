@@ -2,6 +2,324 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<!-- Hero Section -->
+<section id="hero" class="hero-section" style="background-color: #001515; color: #e1e4e8;">
+    <div class="hero-background">
+        <img src="images/medical-hero-bg.jpg" alt="Doctor consulting with patient" class="img-fluid">
+        <div class="overlay" style="background: linear-gradient(rgba(0, 21, 21, 0.8), rgba(0, 61, 64, 0.9));"></div>
+    </div>
 
-Welcome to your new app.
+    <div class="container position-relative">
+        <div class="hero-content">
+            <!-- Welcome Message -->
+            <div class="welcome-message" data-aos="fade-down" data-aos-delay="100">
+                <h1 class="display-4 fw-bold" style="color: #00e1ea;">Your Health Comes First</h1>
+                <p class="lead" style="color: #e1e4e8;">Book appointments with top specialists in just a few clicks</p>
+                <div class="cta-buttons mt-4">
+                    <a href="#appointments" class="btn btn-lg me-3" style="background-color: #008f95; color: #fff; border: none;">
+                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    </a>
+                    <a href="#doctors" class="btn btn-outline-light btn-lg" style="border-color: #00b8bf; color: #00e1ea;">
+                        <i class="fas fa-user-md me-2"></i>Our Specialists
+                    </a>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid row g-4 mt-5">
+                <!-- Why Choose Us -->
+                <div class="col-lg-4">
+                    <div class="feature-card why-choose-us" data-aos="zoom-out" data-aos-delay="200" style="background-color: rgba(0, 102, 106, 0.8); border-radius: 8px; padding: 25px; height: 100%;">
+                        <h3 style="color: #00e1ea;"><i class="fas fa-heartbeat me-2"></i> Why Choose Us?</h3>
+                        <p style="color: #e1e4e8;">
+                            Our patient-centered approach ensures you receive personalized care from board-certified 
+                            physicians. With same-day appointments available and minimal wait times, we prioritize 
+                            your convenience and health.
+                        </p>
+                        <div class="text-center mt-3">
+                            <a href="#about" class="btn" style="background-color: transparent; border: 1px solid #00e1ea; color: #00e1ea;">
+                                Learn More <i class="fas fa-chevron-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="feature-card" data-aos="zoom-out" data-aos-delay="300" style="background-color: rgba(0, 61, 64, 0.9); border-radius: 8px; padding: 25px; height: 100%;">
+                                <div class="feature-icon" style="color: #00e1ea; font-size: 2.5rem; margin-bottom: 15px;">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4 style="color: #90ccfe;">Quick Appointments</h4>
+                                <p style="color: #e1e4e8;">Book online 24/7 with instant confirmation and reminders</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="feature-card" data-aos="zoom-out" data-aos-delay="400" style="background-color: rgba(0, 61, 64, 0.9); border-radius: 8px; padding: 25px; height: 100%;">
+                                <div class="feature-icon" style="color: #00e1ea; font-size: 2.5rem; margin-bottom: 15px;">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <h4 style="color: #90ccfe;">Top Specialists</h4>
+                                <p style="color: #e1e4e8;">Access to 200+ board-certified doctors across specialties</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="feature-card" data-aos="zoom-out" data-aos-delay="500" style="background-color: rgba(0, 61, 64, 0.9); border-radius: 8px; padding: 25px; height: 100%;">
+                                <div class="feature-icon" style="color: #00e1ea; font-size: 2.5rem; margin-bottom: 15px;">
+                                    <i class="fas fa-file-medical"></i>
+                                </div>
+                                <h4 style="color: #90ccfe;">Digital Records</h4>
+                                <p style="color: #e1e4e8;">Secure access to your medical history and test results</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section py-5" style="background-color: #e1e4e8;">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <!-- Image Column -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-image position-relative">
+                    <img src="images/doctor-patient.jpg" class="img-fluid rounded-3 shadow" alt="Doctor consulting with patient">
+                    <div class="experience-badge rounded-pill p-3 shadow" style="background-color: #008f95; color: white; position: absolute; bottom: -20px; right: 20px;">
+                        <div class="h2 mb-0">15+</div>
+                        <div class="small">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="section-header mb-4">
+                    <span class="fw-bold" style="color: #00666a;">ABOUT OUR CLINIC</span>
+                    <h2 class="display-6 fw-bold mt-2" style="color: #001515;">Compassionate Care for All Your Health Needs</h2>
+                </div>
+                
+                <p class="lead" style="color: #003d40;">
+                    At MedAppoint, we're dedicated to providing exceptional healthcare with a personal touch. 
+                    Our team of board-certified physicians and specialists are committed to your well-being.
+                </p>
+                
+                <ul class="about-features list-unstyled">
+                    <li class="d-flex mb-4">
+                        <div class="feature-icon rounded-3 p-3 me-4" style="background-color: rgba(0, 184, 191, 0.15);">
+                            <i class="fas fa-user-md fs-4" style="color: #008f95;"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: #003d40;">Expert Medical Team</h5>
+                            <p class="mb-0" style="color: #646f77;">Our physicians are leaders in their fields with extensive training and experience.</p>
+                        </div>
+                    </li>
+                    
+                    <li class="d-flex mb-4">
+                        <div class="feature-icon rounded-3 p-3 me-4" style="background-color: rgba(0, 184, 191, 0.15);">
+                            <i class="fas fa-clock fs-4" style="color: #008f95;"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: #003d40;">Same-Day Appointments</h5>
+                            <p class="mb-0" style="color: #646f77;">We offer urgent care slots and minimal wait times for your convenience.</p>
+                        </div>
+                    </li>
+                    
+                    <li class="d-flex">
+                        <div class="feature-icon rounded-3 p-3 me-4" style="background-color: rgba(0, 184, 191, 0.15);">
+                            <i class="fas fa-heart fs-4" style="color: #008f95;"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: #003d40;">Patient-Centered Approach</h5>
+                            <p class="mb-0" style="color: #646f77;">Your health goals and preferences guide every aspect of your care.</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="mt-4">
+                    <a href="#doctors" class="btn me-3" style="background-color: #008f95; color: white; border: none;">
+                        <i class="fas fa-user-md me-2"></i>Meet Our Doctors
+                    </a>
+                    <a href="#appointments" class="btn" style="color: #008f95; border: 1px solid #008f95; background: transparent;">
+                        <i class="fas fa-calendar-check me-2"></i>Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Departments Section -->
+<section id="departments" class="departments section" style="background-color: #fff; color: #003d40;">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #008f95;">Departments</h2>
+        <p style="color: #646f77;">Comprehensive care across multiple specialties to meet all your healthcare needs</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column" style="border-color: #e1e4e8;">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#departments-tab-1" 
+                           style="color: #008f95; border-left: 3px solid #00e1ea; background-color: rgba(0, 184, 191, 0.1);">Cardiology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-2" 
+                           style="color: #00666a; border-left: 3px solid transparent;">Neurology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3" 
+                           style="color: #00666a; border-left: 3px solid transparent;">Hepatology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4" 
+                           style="color: #00666a; border-left: 3px solid transparent;">Pediatrics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5" 
+                           style="color: #00666a; border-left: 3px solid transparent;">Eye Care</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="departments-tab-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3 style="color: #008f95;">Cardiology</h3>
+                                <p class="fst-italic" style="color: #646f77;">Advanced cardiac care with cutting-edge diagnostics and treatment options</p>
+                                <p style="color: #003d40;">Our cardiology department offers comprehensive care for heart conditions, from preventive screenings to advanced treatments. Our team of experienced cardiologists use state-of-the-art equipment to diagnose and treat various heart conditions, ensuring you receive the best possible care for your cardiovascular health.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="assets/img/departments-1.jpg" alt="" class="img-fluid" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 102, 106, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3 style="color: #008f95;">Neurology</h3>
+                                <p class="fst-italic" style="color: #646f77;">Expert care for neurological disorders and conditions</p>
+                                <p style="color: #003d40;">Our neurology department specializes in the diagnosis and treatment of disorders affecting the nervous system. Our experienced neurologists work with the latest technology to provide comprehensive care for conditions ranging from headaches and sleep disorders to more complex neurological issues.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="assets/img/departments-2.jpg" alt="" class="img-fluid" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 102, 106, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-3">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3 style="color: #008f95;">Hepatology</h3>
+                                <p class="fst-italic" style="color: #646f77;">Specialized care for liver diseases and digestive disorders</p>
+                                <p style="color: #003d40;">Our hepatology department focuses on diseases and conditions affecting the liver, gallbladder, biliary tree, and pancreas. Our hepatologists are experts in diagnosing and treating various liver conditions, from hepatitis to more complex liver diseases, providing personalized care plans for optimal recovery.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="assets/img/departments-3.jpg" alt="" class="img-fluid" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 102, 106, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-4">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3 style="color: #008f95;">Pediatrics</h3>
+                                <p class="fst-italic" style="color: #646f77;">Compassionate healthcare for children of all ages</p>
+                                <p style="color: #003d40;">Our pediatrics department is dedicated to the health and well-being of children from birth through adolescence. Our team of pediatricians provides comprehensive care including well-child visits, vaccinations, developmental screenings, and treatment for illnesses and injuries in a child-friendly environment.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="assets/img/departments-4.jpg" alt="" class="img-fluid" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 102, 106, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="departments-tab-5">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3 style="color: #008f95;">Eye Care</h3>
+                                <p class="fst-italic" style="color: #646f77;">Complete vision and eye health services</p>
+                                <p style="color: #003d40;">Our eye care department offers comprehensive services for vision correction and treatment of eye conditions. From routine eye exams and prescription glasses to advanced treatments for eye diseases, our ophthalmologists and optometrists are committed to preserving and improving your vision and eye health.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="assets/img/departments-5.jpg" alt="" class="img-fluid" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 102, 106, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /Departments Section -->
+
+<!-- FAQ Section -->
+<section id="faq" class="faq section" style="background-color: #e1e4e8;">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: #008f95;">Frequently Asked Questions</h2>
+        <p style="color: #646f77;">Explore answers to common inquiries about our healthcare services and procedures.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-container">
+                    <div class="faq-item faq-active" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">What should I expect during my first appointment?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77;">
+                            <p>Your first appointment will involve a comprehensive evaluation. We will discuss your medical history, any current concerns, and outline the next steps for your care.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">How do I prepare for my appointment?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77; display: none;">
+                            <p>Please arrive 15 minutes early to fill out any necessary paperwork. Bring your insurance card, list of medications, and any medical records if applicable.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">What if I need to cancel or reschedule my appointment?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77; display: none;">
+                            <p>If you need to cancel or reschedule, please contact our office at least 24 hours in advance to avoid any cancellation fees and to allow us to offer your slot to another patient.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">Are your services covered by insurance?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77; display: none;">
+                            <p>Many of our services are covered by various insurance plans. Please contact your insurance provider for specific coverage details and feel free to reach out to us for assistance.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">What do I do in case of an emergency?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77; display: none;">
+                            <p>In the event of a medical emergency, please call 911 or visit the nearest emergency room. Our office also welcomes urgent visits for non-life-threatening issues during business hours.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item" style="border: 1px solid rgba(0, 143, 149, 0.2); border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+                        <h3 style="background-color: rgba(0, 143, 149, 0.05); padding: 20px; margin: 0; color: #008f95; font-size: 1.1rem; position: relative; cursor: pointer;">Can I access my medical records?</h3>
+                        <div class="faq-content" style="padding: 20px; background-color: #fff; color: #646f77; display: none;">
+                            <p>Yes, you have the right to access your medical records. Please contact our office to request a copy, and we will provide further instructions.</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right" style="position: absolute; right: 20px; top: 22px; color: #008f95; transition: transform 0.3s ease;"></i>
+                    </div><!-- End Faq item-->
+                </div>
+            </div><!-- End Faq Column-->
+        </div>
+    </div>
+</section><!-- /FAQ Section -->
+
+

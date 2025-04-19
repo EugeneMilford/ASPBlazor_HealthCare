@@ -1,0 +1,214 @@
+﻿@page "/doctors" 
+
+<!-- Breadcrumb - Dynamic version -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+ 
+<!-- Medical Professionals Section -->
+<section class="medical-team py-5">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center mb-5">
+            <h4 class="text-primary">Our Specialists</h4>
+            <h2 class="display-5 mb-3 text-dark">Meet Our Expert Medical Team</h2>
+            <p class="lead text-medium-gray">Our board-certified physicians bring exceptional skill and compassionate care to every patient interaction.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Doctor 1 -->
+            <div class="col-lg-6">
+                <div class="doctor-card">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/images/doctors/cardiologist.jpg" class="img-fluid rounded-start" alt="Dr. Michael Chen">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="doctor-info p-4">
+                                <h3 class="doctor-name">Dr. Michael Chen</h3>
+                                <span class="doctor-specialty">Cardiologist</span>
+                                <p class="doctor-bio mt-3">Harvard-trained cardiologist with 15 years experience in interventional procedures. Specializes in complex coronary interventions and preventive cardiology.</p>
+                                
+                                <div class="doctor-meta mt-3">
+                                    <div class="meta-item">
+                                        <i class="fas fa-graduation-cap me-2"></i>
+                                        <span>Johns Hopkins University</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-certificate me-2"></i>
+                                        <span>Board Certified</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="doctor-social mt-4">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 2 -->
+            <div class="col-lg-6">
+                <div class="doctor-card">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/images/doctors/pediatrician.jpg" class="img-fluid rounded-start" alt="Dr. Sarah Johnson">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="doctor-info p-4">
+                                <h3 class="doctor-name">Dr. Sarah Johnson</h3>
+                                <span class="doctor-specialty">Pediatrician</span>
+                                <p class="doctor-bio mt-3">Specializing in childhood development and adolescent medicine. Focused on creating a comfortable environment for young patients and their families.</p>
+                                
+                                <div class="doctor-meta mt-3">
+                                    <div class="meta-item">
+                                        <i class="fas fa-graduation-cap me-2"></i>
+                                        <span>Stanford University</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-certificate me-2"></i>
+                                        <span>Fellow, AAP</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="doctor-social mt-4">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 3 -->
+            <div class="col-lg-6">
+                <div class="doctor-card">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/images/doctors/neurologist.jpg" class="img-fluid rounded-start" alt="Dr. William Anderson">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="doctor-info p-4">
+                                <h3 class="doctor-name">Dr. William Anderson</h3>
+                                <span class="doctor-specialty">Neurologist</span>
+                                <p class="doctor-bio mt-3">Specializes in movement disorders and neurodegenerative diseases. Pioneering researcher in Parkinson's disease treatments with over 50 published papers.</p>
+                                
+                                <div class="doctor-meta mt-3">
+                                    <div class="meta-item">
+                                        <i class="fas fa-graduation-cap me-2"></i>
+                                        <span>Mayo Clinic</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-certificate me-2"></i>
+                                        <span>Fellow, AAN</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="doctor-social mt-4">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor 4 -->
+            <div class="col-lg-6">
+                <div class="doctor-card">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="/images/doctors/orthopedic.jpg" class="img-fluid rounded-start" alt="Dr. Amanda Jepson">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="doctor-info p-4">
+                                <h3 class="doctor-name">Dr. Amanda Jepson</h3>
+                                <span class="doctor-specialty">Orthopedic Surgeon</span>
+                                <p class="doctor-bio mt-3">Specializes in sports medicine and joint preservation techniques. Team physician for several collegiate athletic programs and former Olympic consultant.</p>
+                                
+                                <div class="doctor-meta mt-3">
+                                    <div class="meta-item">
+                                        <i class="fas fa-graduation-cap me-2"></i>
+                                        <span>Duke University</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-certificate me-2"></i>
+                                        <span>Board Certified</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="doctor-social mt-4">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+}

@@ -1,0 +1,266 @@
+﻿@page "/contact"
+@using System.ComponentModel.DataAnnotations
+
+<!-- Breadcrumb -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container-fluid px-0">
+        <div class="row g-0">
+            <!-- Contact Form Column -->
+            <div class="col-lg-7">
+                <div class="contact-form-container">
+                    <h2 class="section-title">
+                        <i class="fas fa-comment-medical me-2"></i>Contact Us
+                    </h2>
+                    <p class="section-subtitle">
+                        Have questions or need to schedule an appointment? Send us a message and we'll respond promptly.
+                    </p>
+
+                    <EditForm Model="_contactModel" OnValidSubmit="HandleValidSubmit" class="needs-validation">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name*</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <InputText @bind-Value="_contactModel.FirstName" class="form-control" id="firstName" required />
+                                </div>
+                                <ValidationMessage For="@(() => _contactModel.FirstName)" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name*</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <InputText @bind-Value="_contactModel.LastName" class="form-control" id="lastName" required />
+                                </div>
+                                <ValidationMessage For="@(() => _contactModel.LastName)" />
+                            </div>
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email*</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <InputText @bind-Value="_contactModel.Email" class="form-control" id="email" required />
+                                </div>
+                                <ValidationMessage For="@(() => _contactModel.Email)" />
+                            </div>
+                            <div class="col-12">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <InputText @bind-Value="_contactModel.Phone" class="form-control" id="phone" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject*</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                                    <InputSelect @bind-Value="_contactModel.Subject" class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="Appointment">Appointment Booking</option>
+                                        <option value="Prescription">Prescription Refill</option>
+                                        <option value="Billing">Billing Inquiry</option>
+                                        <option value="General">General Question</option>
+                                    </InputSelect>
+                                </div>
+                                <ValidationMessage For="@(() => _contactModel.Subject)" />
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message*</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-comment-dots"></i></span>
+                                    <InputTextArea @bind-Value="_contactModel.Message" class="form-control" id="message" rows="5" required />
+                                </div>
+                                <ValidationMessage For="@(() => _contactModel.Message)" />
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-send-message">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+
+            <!-- Contact Info Column -->
+            <div class="col-lg-5">
+                <div class="contact-info-container">
+                    <div class="contact-info-section">
+                        <h3>
+                            <i class="fas fa-map-marker-alt me-2"></i>Our Location
+                        </h3>
+                        <div class="contact-info-content">
+                            <p><i class="fas fa-hospital me-2"></i><strong>Medical Center Name</strong></p>
+                            <p><i class="fas fa-map-pin me-2"></i>123 Healthcare Avenue</p>
+                            <p><i class="fas fa-city me-2"></i>Medical District, City 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <h3>
+                            <i class="fas fa-address-book me-2"></i>Contact Methods
+                        </h3>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Phone</h4>
+                                <p>(123) 456-7890</p>
+                                <small>Mon-Fri, 8:00 AM - 5:00 PM</small>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email</h4>
+                                <p>contact@medicalcenter.com</p>
+                                <small>Response within 24 hours</small>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon emergency">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Emergency</h4>
+                                <p>(123) 456-7891</p>
+                                <small>24/7 Emergency Services</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <h3>
+                            <i class="fas fa-clock me-2"></i>Business Hours
+                        </h3>
+                        <ul class="business-hours">
+                            <li>
+                                <span>Monday - Friday</span>
+                                <span>8:00 AM - 5:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Saturday</span>
+                                <span>9:00 AM - 2:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-info-section">
+                        <h3>
+                            <i class="fas fa-share-alt me-2"></i>Connect With Us
+                        </h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private ContactModel _contactModel = new ContactModel();
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Form submitted successfully");
+    }
+
+    public class ContactModel
+    {
+        [Required(ErrorMessage = "First name is required")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Last name is required")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email")]
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Please select a subject")]
+        public string Subject { get; set; }
+
+        [Required(ErrorMessage = "Message is required")]
+        [MinLength(10, ErrorMessage = "Message should be at least 10 characters")]
+        public string Message { get; set; }
+    }
+
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+}
+
+

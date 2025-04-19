@@ -1,44 +1,81 @@
 @page "/appointments"
+@using HealthCare.Frontend.Clients
 @using Models
 
 <PageTitle>Scheduled Appointments</PageTitle>
 
+<!-- Breadcrumb - Dynamic version -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+
 <div class="appointment-container">
-    <h2 class="appointment-header">Upcoming Appointments</h2>
+    <h2 class="appointment-header text-center mb-4">
+        <i class="fas fa-calendar-check me-2"></i>Upcoming Appointments
+    </h2>
     
     <div class="appointment-list">
         @foreach (var appointment in appointments)
         {
-            <div class="appointment-card @appointment.Status.ToLower()">
-                <div class="appointment-card-header">
-                    <span class="patient-name">@appointment.Name</span>
-                    <span class="appointment-status">@appointment.Status</span>
+            <div class="appointment-card @appointment.Status.ToLower() mb-4">
+                <div class="appointment-card-header d-flex justify-content-between align-items-center p-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-user-circle me-3 fa-2x"></i>
+                        <span class="patient-name h5 mb-0">@appointment.Name</span>
+                    </div>
+                    <span class="appointment-status badge rounded-pill px-3 py-2">
+                        @appointment.Status
+                    </span>
                 </div>
                 
-                <div class="appointment-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Doctor:</span>
-                        <span class="detail-value">@appointment.Doctor</span>
+                <div class="appointment-details p-3">
+                    <div class="detail-row row mb-2">
+                        <div class="col-4 detail-label">
+                            <i class="fas fa-user-md me-2"></i>Doctor:
+                        </div>
+                        <div class="col-8 detail-value fw-bold">
+                            @appointment.Doctor
+                        </div>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Date/Time:</span>
-                        <span class="detail-value">@appointment.AppointmentDateTime.ToString("f")</span>
+                    <div class="detail-row row mb-2">
+                        <div class="col-4 detail-label">
+                            <i class="fas fa-clock me-2"></i>Date/Time:
+                        </div>
+                        <div class="col-8 detail-value">
+                            @appointment.AppointmentDateTime.ToString("f")
+                        </div>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Duration:</span>
-                        <span class="detail-value">@appointment.Duration.ToString(@"hh\:mm")</span>
+                    <div class="detail-row row mb-2">
+                        <div class="col-4 detail-label">
+                            <i class="fas fa-stopwatch me-2"></i>Duration:
+                        </div>
+                        <div class="col-8 detail-value">
+                            @appointment.Duration.ToString(@"hh\:mm")
+                        </div>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Type:</span>
-                        <span class="detail-value">@appointment.AppointmentType</span>
+                    <div class="detail-row row">
+                        <div class="col-4 detail-label">
+                            <i class="fas fa-stethoscope me-2"></i>Type:
+                        </div>
+                        <div class="col-8 detail-value">
+                            @appointment.AppointmentType
+                        </div>
                     </div>
                 </div>
                 
                 @if (!string.IsNullOrEmpty(appointment.Notes))
                 {
-                    <div class="appointment-notes">
-                        <span class="notes-label">Notes:</span>
-                        <p>@appointment.Notes</p>
+                    <div class="appointment-notes p-3 bg-light rounded-bottom">
+                        <span class="notes-label fw-bold d-block mb-2">
+                            <i class="fas fa-notes-medical me-2"></i>Notes:
+                        </span>
+                        <p class="mb-0">@appointment.Notes</p>
                     </div>
                 }
             </div>
@@ -46,175 +83,59 @@
     </div>
 </div>
 
-<style>
-    .appointment-container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .appointment-header {
-        color: #2c3e50;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-
-    .appointment-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .appointment-card {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 20px;
-        border-left: 5px solid #3498db;
-    }
-
-    .appointment-card.confirmed {
-        border-left-color: #2ecc71;
-    }
-
-    .appointment-card.pending {
-        border-left-color: #f39c12;
-    }
-
-    .appointment-card.cancelled {
-        border-left-color: #e74c3c;
-        opacity: 0.7;
-    }
-
-    .appointment-card.completed {
-        border-left-color: #9b59b6;
-    }
-
-    .appointment-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eee;
-    }
-
-    .patient-name {
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: #2c3e50;
-    }
-
-    .appointment-status {
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .confirmed .appointment-status {
-        background-color: #d5f5e3;
-        color: #27ae60;
-    }
-
-    .pending .appointment-status {
-        background-color: #fdebd0;
-        color: #f39c12;
-    }
-
-    .cancelled .appointment-status {
-        background-color: #fadbd8;
-        color: #e74c3c;
-    }
-
-    .completed .appointment-status {
-        background-color: #e8daef;
-        color: #8e44ad;
-    }
-
-    .appointment-details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .detail-row {
-        display: flex;
-        gap: 10px;
-    }
-
-    .detail-label {
-        font-weight: bold;
-        color: #7f8c8d;
-    }
-
-    .detail-value {
-        color: #34495e;
-    }
-
-    .appointment-notes {
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px dashed #eee;
-    }
-
-    .notes-label {
-        font-weight: bold;
-        color: #7f8c8d;
-        display: block;
-        margin-bottom: 5px;
-    }
-</style>
-
 @code {
-    private AppointmentSummary[] appointments = 
-    [
-        new() {
-            PatientId = 1,
-            Name = "John Smith",
-            Doctor = "Dr. Emily Johnson",
-            AppointmentDateTime = new DateTime(2023, 12, 15, 14, 30, 0),
-            Duration = TimeSpan.FromMinutes(30),
-            AppointmentType = "General Checkup",
-            Notes = "Annual physical examination",
-            Status = "Confirmed",
-            CreatedAt = DateTime.Now.AddDays(-7)
-        },
-        new() {
-            PatientId = 2,
-            Name = "Sarah Williams",
-            Doctor = "Dr. Michael Chen",
-            AppointmentDateTime = new DateTime(2023, 12, 16, 10, 0, 0),
-            Duration = TimeSpan.FromMinutes(60),
-            AppointmentType = "Consultation",
-            Notes = "Follow-up for test results",
-            Status = "Pending",
-            CreatedAt = DateTime.Now.AddDays(-3)
-        },
-        new() {
-            PatientId = 3,
-            Name = "Robert Johnson",
-            Doctor = "Dr. Lisa Park",
-            AppointmentDateTime = new DateTime(2023, 12, 17, 9, 15, 0),
-            Duration = TimeSpan.FromMinutes(45),
-            AppointmentType = "Dental Cleaning",
-            Notes = "No extra notes",
-            Status = "Completed",
-            CreatedAt = DateTime.Now.AddDays(-14)
-        },
-        new() {
-            PatientId = 4,
-            Name = "Maria Garcia",
-            Doctor = "Dr. David Wilson",
-            AppointmentDateTime = new DateTime(2023, 12, 18, 16, 0, 0),
-            Duration = TimeSpan.FromMinutes(20),
-            AppointmentType = "Vaccination",
-            Notes = "Flu shot",
-            Status = "Cancelled",
-            CreatedAt = DateTime.Now.AddDays(-5)
-        }
-    ];
+    private AppointmentClient client = new();
+
+    private AppointmentSummary[] appointments;
+
+    protected override void OnInitialized()
+    {
+        appointments = client.GetAppointments();
+    }
+
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
 }

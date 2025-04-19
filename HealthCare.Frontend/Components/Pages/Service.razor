@@ -1,0 +1,307 @@
+﻿@page "/services"
+
+<!-- Breadcrumb -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+
+<!-- Services Start -->
+<div class="container-fluid medical-services py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h4 class="text-primary">Our Medical Services</h4>
+            <h1 class="display-5 mb-4 text-dark">Comprehensive Healthcare Services</h1>
+            <p class="mb-0 text-medium-gray">We provide exceptional medical care with state-of-the-art technology and compassionate professionals dedicated to your health and wellbeing.</p>
+        </div>
+        <div class="row g-4">
+            <!-- Emergency Care -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/emergency-service.jpg" class="img-fluid w-100" alt="Emergency Care">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Emergency Care</h4>
+                        <p class="mb-4 text-medium-gray">24/7 emergency services with board-certified physicians ready to handle any medical crisis.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cardiology -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/cardiology-service.jpg" class="img-fluid w-100" alt="Cardiology">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Cardiology</h4>
+                        <p class="mb-4 text-medium-gray">Comprehensive heart care including diagnostics, treatment, and rehabilitation.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#cardiologyModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orthopedics -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/orthopedics-service.jpg" class="img-fluid w-100" alt="Orthopedics">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Orthopedics</h4>
+                        <p class="mb-4 text-medium-gray">Specialized care for musculoskeletal issues, from sports injuries to joint replacements.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#orthopedicsModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pediatrics -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/pediatrics-service.jpg" class="img-fluid w-100" alt="Pediatrics">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Pediatrics</h4>
+                        <p class="mb-4 text-medium-gray">Compassionate care for infants, children, and adolescents with specialized expertise.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#pediatricsModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neurology -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/neurology-service.jpg" class="img-fluid w-100" alt="Neurology">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Neurology</h4>
+                        <p class="mb-4 text-medium-gray">Expert care for disorders of the nervous system, including stroke management.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#neurologyModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostics -->
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="/images/diagnostics-service.jpg" class="img-fluid w-100" alt="Diagnostics">
+                    </div>
+                    <div class="service-content p-4">
+                        <h4 class="mb-3 text-dark">Advanced Diagnostics</h4>
+                        <p class="mb-4 text-medium-gray">State-of-the-art imaging and laboratory services for accurate diagnosis.</p>
+                        <button class="btn btn-primary rounded-pill py-2 px-4" data-bs-toggle="modal" data-bs-target="#diagnosticsModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+<!-- Orthopedics Modal -->
+<div class="modal fade" id="orthopedicsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Orthopedics Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/orthopedics-service.jpg" class="img-fluid rounded mb-4" alt="Orthopedics">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">Specialized Musculoskeletal Care</h4>
+                        <p>Our orthopedic department offers comprehensive care for bone, joint, and muscle conditions, from diagnosis through rehabilitation.</p>
+                        <ul class="mb-3">
+                            <li>Joint replacement surgery</li>
+                            <li>Sports medicine and injury treatment</li>
+                            <li>Spine surgery and care</li>
+                            <li>Physical therapy and rehabilitation</li>
+                        </ul>
+                        <p>Our orthopedic specialists use minimally invasive techniques when possible to promote faster recovery and better outcomes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pediatrics Modal -->
+<div class="modal fade" id="pediatricsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Pediatrics Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/pediatrics-service.jpg" class="img-fluid rounded mb-4" alt="Pediatrics">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">Child-Centered Healthcare</h4>
+                        <p>Our pediatric department provides specialized care for infants, children, and adolescents in a child-friendly environment.</p>
+                        <ul class="mb-3">
+                            <li>Well-child visits and preventive care</li>
+                            <li>Pediatric subspecialty services</li>
+                            <li>Child development assessment</li>
+                            <li>Childhood immunization programs</li>
+                        </ul>
+                        <p>Our pediatricians work closely with families to address both common childhood illnesses and complex medical conditions with compassion and expertise.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Neurology Modal -->
+<div class="modal fade" id="neurologyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Neurology Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/neurology-service.jpg" class="img-fluid rounded mb-4" alt="Neurology">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">Advanced Neurological Care</h4>
+                        <p>Our neurology department specializes in diagnosing and treating disorders of the nervous system, including the brain, spinal cord, and peripheral nerves.</p>
+                        <ul class="mb-3">
+                            <li>Stroke care and rehabilitation</li>
+                            <li>Epilepsy monitoring and treatment</li>
+                            <li>Headache and migraine management</li>
+                            <li>Neurodegenerative disease treatment</li>
+                        </ul>
+                        <p>Our neurologists use advanced diagnostic tools and therapies to address complex neurological conditions and improve quality of life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Diagnostics Modal -->
+<div class="modal fade" id="diagnosticsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Advanced Diagnostics Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/diagnostics-service.jpg" class="img-fluid rounded mb-4" alt="Diagnostics">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">Comprehensive Diagnostic Services</h4>
+                        <p>Our diagnostic department offers a full range of testing services using state-of-the-art technology for accurate and timely results.</p>
+                        <ul class="mb-3">
+                            <li>Advanced medical imaging (MRI, CT, Ultrasound)</li>
+                            <li>Laboratory testing and pathology</li>
+                            <li>Cardiac and vascular diagnostics</li>
+                            <li>Rapid results reporting system</li>
+                        </ul>
+                        <p>Our diagnostics team works closely with referring physicians to ensure prompt and precise diagnoses to guide effective treatment plans.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+}

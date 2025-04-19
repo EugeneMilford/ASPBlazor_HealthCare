@@ -1,0 +1,208 @@
+﻿@page "/departments"
+
+<!-- Breadcrumb -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+
+<!-- Departments Start -->
+<div class="container-fluid departments py-5">
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h4 class="text-primary">Our Specialties</h4>
+            <h1 class="display-5 mb-4 text-dark">Comprehensive Medical Departments</h1>
+            <p class="mb-0 text-medium-gray">We offer specialized care across multiple disciplines with state-of-the-art facilities and expert medical professionals dedicated to your health and wellbeing.</p>
+        </div>
+
+        <!-- Department Cards -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="department-card p-4 h-100">
+                    <div class="department-icon p-4 mb-4">
+                        <i class="fas fa-heartbeat fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="text-dark">Cardiology</h4>
+                    <p class="mb-4 text-medium-gray">Comprehensive heart care including diagnostics, treatment, and rehabilitation for all cardiac conditions.</p>
+                    <a class="btn btn-outline-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="department-card p-4 h-100">
+                    <div class="department-icon p-4 mb-4">
+                        <i class="fas fa-brain fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="text-dark">Neurology</h4>
+                    <p class="mb-4 text-medium-gray">Expert care for disorders of the nervous system, including stroke management and epilepsy treatment.</p>
+                    <a class="btn btn-outline-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="department-card p-4 h-100">
+                    <div class="department-icon p-4 mb-4">
+                        <i class="fas fa-bone fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="text-dark">Orthopedics</h4>
+                    <p class="mb-4 text-medium-gray">Specialized care for musculoskeletal issues, from sports injuries to joint replacements.</p>
+                    <a class="btn btn-outline-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="department-card p-4 h-100">
+                    <div class="department-icon p-4 mb-4">
+                        <i class="fas fa-baby fa-4x text-primary"></i>
+                    </div>
+                    <h4 class="text-dark">Pediatrics</h4>
+                    <p class="mb-4 text-medium-gray">Compassionate care for infants, children, and adolescents with specialized pediatric expertise.</p>
+                    <a class="btn btn-outline-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Departments End -->
+
+<!-- Services Start -->
+<div class="container-fluid services py-5 bg-light-gray">
+    <div class="container py-5">
+        <!-- Header Section -->
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h4 class="text-primary">Our Services</h4>
+            <h1 class="display-5 mb-4 text-dark">Specialized Healthcare Services</h1>
+            <p class="mb-0 text-medium-gray">We provide comprehensive medical services with cutting-edge technology and personalized care approaches.</p>
+        </div>
+
+        <!-- Services Accordion -->
+        <div class="row g-5 align-items-center">
+            <div class="col-xl-5">
+                <div class="nav nav-pills bg-white rounded p-4">
+    <a class="service-link p-4 active mb-3" data-bs-toggle="pill" href="#emergency-care" role="tab" aria-controls="emergency-care" aria-selected="true">
+        <h5 class="mb-0"><i class="fas fa-ambulance me-3 text-primary"></i>24/7 Emergency Care</h5>
+    </a>
+    <a class="service-link p-4 mb-3" data-bs-toggle="pill" href="#diagnostic" role="tab" aria-controls="diagnostic" aria-selected="false">
+        <h5 class="mb-0"><i class="fas fa-microscope me-3 text-primary"></i>Advanced Diagnostics</h5>
+    </a>
+    <a class="service-link p-4 mb-3" data-bs-toggle="pill" href="#surgery" role="tab" aria-controls="surgery" aria-selected="false">
+        <h5 class="mb-0"><i class="fas fa-procedures me-3 text-primary"></i>Minimally Invasive Surgery</h5>
+    </a>
+    <a class="service-link p-4 mb-0" data-bs-toggle="pill" href="#rehabilitation" role="tab" aria-controls="rehabilitation" aria-selected="false">
+        <h5 class="mb-0"><i class="fas fa-heartbeat me-3 text-primary"></i>Cardiac Rehabilitation</h5>
+    </a>
+</div>
+            </div>
+            <div class="col-xl-7">
+                <div class="tab-content">
+                    <div id="emergency-care" class="tab-pane fade show p-4 active">
+                        <h1 class="display-6 mb-4 text-dark">24/7 Emergency Care</h1>
+                        <p class="mb-4 text-medium-gray">Our emergency department operates around the clock with board-certified emergency physicians and specialized trauma teams. We're equipped to handle everything from minor injuries to life-threatening conditions with:</p>
+                        <ul class="mb-4 text-medium-gray">
+                            <li class="mb-2">Level II Trauma Center certification</li>
+                            <li class="mb-2">Average wait times under 15 minutes</li>
+                            <li class="mb-2">Specialized pediatric emergency care</li>
+                            <li>Direct admission pathways to critical care units</li>
+                        </ul>
+                        <p class="mb-4 text-medium-gray">Our emergency protocols follow the latest evidence-based guidelines to ensure you receive the right care at the right time.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                    
+                    <div id="diagnostic" class="tab-pane fade show p-4">
+                        <h1 class="display-6 mb-4 text-dark">Advanced Diagnostics</h1>
+                        <p class="mb-4 text-medium-gray">Our diagnostic center utilizes cutting-edge technology to provide accurate, timely results that inform your treatment plan. We offer:</p>
+                        <ul class="mb-4 text-medium-gray">
+                            <li class="mb-2">3T MRI with advanced imaging protocols</li>
+                            <li class="mb-2">Low-dose CT scanning technology</li>
+                            <li class="mb-2">Digital X-ray with immediate results</li>
+                            <li class="mb-2">Comprehensive laboratory testing</li>
+                            <li>Specialized cardiac and neurological diagnostics</li>
+                        </ul>
+                        <p class="mb-4 text-medium-gray">All tests are interpreted by fellowship-trained radiologists and pathologists, with most results available to your physician within 24 hours. Our patient-centered approach means we explain procedures clearly and ensure your comfort throughout the process.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                    
+                    <div id="surgery" class="tab-pane fade show p-4">
+                        <h1 class="display-6 mb-4 text-dark">Minimally Invasive Surgery</h1>
+                        <p class="mb-4 text-medium-gray">Our surgical team specializes in techniques that minimize trauma and accelerate recovery. Benefits include:</p>
+                        <ul class="mb-4 text-medium-gray">
+                            <li class="mb-2">Smaller incisions with less scarring</li>
+                            <li class="mb-2">Reduced blood loss during procedures</li>
+                            <li class="mb-2">Shorter hospital stays (often same-day discharge)</li>
+                            <li class="mb-2">Lower risk of infection</li>
+                            <li>Faster return to normal activities</li>
+                        </ul>
+                        <p class="mb-4 text-medium-gray">We perform robotic-assisted and laparoscopic procedures across multiple specialties including general surgery, gynecology, urology, and orthopedics. Our surgical suites feature the latest technology and are staffed by highly trained teams focused on your safety and comfort.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                    
+                    <div id="rehabilitation" class="tab-pane fade show p-4">
+                        <h1 class="display-6 mb-4 text-dark">Cardiac Rehabilitation</h1>
+                        <p class="mb-4 text-medium-gray">Our comprehensive cardiac rehab program helps patients recover from heart events and improve cardiovascular health through:</p>
+                        <ul class="mb-4 text-medium-gray">
+                            <li class="mb-2">Supervised exercise programs tailored to your condition</li>
+                            <li class="mb-2">Nutrition counseling from cardiac dietitians</li>
+                            <li class="mb-2">Stress management techniques</li>
+                            <li class="mb-2">Medication management education</li>
+                            <li>Ongoing risk factor modification</li>
+                        </ul>
+                        <p class="mb-4 text-medium-gray">The 12-week program includes continuous EKG monitoring during exercise sessions and regular progress evaluations by our cardiology team. We focus on helping you regain strength, understand your heart condition, and make lifestyle changes for long-term heart health.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+@code {
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+}
