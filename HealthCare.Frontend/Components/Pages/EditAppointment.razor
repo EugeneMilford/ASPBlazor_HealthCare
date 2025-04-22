@@ -1,0 +1,238 @@
+﻿@page "/editappointment"
+@using HealthCare.Frontend.Clients
+@using HealthCare.Frontend.Models
+
+<PageTitle>Edit Appointment</PageTitle>
+
+@if (doctors is null)
+{
+  <p><em>Loading...</em></p>
+}
+else
+{
+
+<!-- Breadcrumb -->
+<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item"><a href="/appointments" class="text-white">Appointments</a></li>
+            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+        </ol>    
+    </div>
+</div>
+
+<div class="appointment-form-container">
+    <div class="form-header mb-4">
+        <h3 class="text-primary"><i class="fas fa-calendar-plus me-2"></i>Edit Appointment</h3>
+        <p class="text-medium-gray">Please fill out all required fields to schedule your medical appointment</p>
+    </div>
+
+    <EditForm Model="@appointment" FormName="EditAppointment" class="medical-form" OnSubmit="HandleSubmit">
+        <div class="row g-3">
+            <!-- Patient Information -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        <i class="fas fa-user me-2"></i>Patient Name
+                    </label>
+                    <InputText id="name" @bind-Value="appointment.Name" class="form-control" />
+                    <div class="form-text">Full legal name as it appears on insurance</div>
+                </div>
+            </div>
+
+            <!-- Doctor Selection -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="doctor" class="form-label">
+                        <i class="fas fa-user-md me-2"></i>Doctor
+                    </label>
+                    <InputSelect @bind-Value="appointment.DoctorId" id="doctor" class="form-select">
+                        <option value="">Select doctor</option>
+                        @foreach (var doctor in doctors)
+                        {
+                            <option value="@doctor.DoctorId">@doctor.DoctorName</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+
+            <!-- Date and Time -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="appointmentDate" class="form-label">
+                        <i class="fas fa-calendar-day me-2"></i>Appointment Date
+                    </label>
+                    <InputDate @bind-Value="appointment.AppointmentDateTime" id="appointmentDate" class="form-control" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+        <label for="appointmentTime" class="form-label">Appointment Time:</label>
+        <InputSelect @bind-Value="appointment.AppointmentDateTime " id="appointmentTime" class="form-control">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+        </InputSelect>
+    </div>
+
+            <!-- Duration and Type -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="duration" class="form-label">
+                        <i class="fas fa-stopwatch me-2"></i>Duration (minutes)
+                    </label>
+                    <input type="number" 
+                           value="@((int)appointment.Duration.TotalMinutes)" 
+                           @onchange="@(e => appointment.Duration = TimeSpan.FromMinutes(int.Parse(e.Value?.ToString() ?? "30")))" 
+                           id="duration" 
+                           class="form-control"
+                           min="15"
+                           max="120"
+                           step="15" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="appointmenttype" class="form-label">
+                        <i class="fas fa-stethoscope me-2"></i>Appointment Type
+                    </label>
+                    <InputSelect @bind-Value="appointment.AppointmentType" id="appointmenttype" class="form-select">
+                        <option value="">Select type</option>
+                        <option value="Consultation">Consultation</option>
+                        <option value="Follow-up">Follow-up</option>
+                        <option value="Procedure">Procedure</option>
+                        <option value="Annual Checkup">Annual Checkup</option>
+                        <option value="Emergency">Emergency</option>
+                    </InputSelect>
+                </div>
+            </div>
+
+            <!-- Status and Notes -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="statusId" class="form-label">
+                        <i class="fas fa-info-circle me-2"></i>Status
+                    </label>
+                    <InputSelect @bind-Value="appointment.StatusId" id="statusId" class="form-select">
+                        <option value="">Select Status</option>
+                        @foreach (var status in statusses)
+                        {
+                            <option value="@status.StatusId">@status.CurrentStatus</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="notes" class="form-label">
+                        <i class="fas fa-notes-medical me-2"></i>Notes
+                    </label>
+                    <InputTextArea @bind-Value="appointment.Notes" id="notes" class="form-control" rows="4" />
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary me-3">
+                    <i class="fas fa-save me-2"></i>Save Appointment
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </button>
+            </div>
+        </div>
+    </EditForm>
+</div>
+}
+
+@code {
+    [SupplyParameterFromForm]
+
+    private AppointmentDetails appointment { get; set; } = new()
+    {
+        Name = string.Empty,
+        CreatedAt = DateTime.Now,
+        Duration = TimeSpan.FromMinutes(30) // Default 30 minute appointment
+    };
+    private DoctorsClient doctorsClient = new();
+
+    private Doctor[] doctors;
+
+    private StatusClient statusClient = new();
+
+    private Status[] statusses;
+
+    protected override void OnInitialized()
+    {
+      doctors = doctorsClient.GetDoctors();
+      statusses = statusClient.GetStatusses();
+    }
+
+    private AppointmentClient appointmentClient = new();
+
+     private void HandleSubmit()
+    {
+      appointmentClient.AddAppointment(appointment);
+    }
+
+    private string CurrentPage => GetCurrentPage();
+    private string PageTitle => GetPageTitle();
+
+    private string GetBreadcrumbClass()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "breadcrumb-doctors",
+            "appointments" => "breadcrumb-appointments",
+            "departments" => "breadcrumb-departments",
+            "contact" => "breadcrumb-contact",
+            "services" => "breadcrumb-services",
+            _ => "breadcrumb-home"
+        };
+    }
+    private string GetCurrentPage()
+    {
+        var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return relativePath.Split('/')[0] switch
+        {
+            "doctors" => "Doctors",
+            "appointments" => "Appointments",
+            "departments" => "Departments",
+            "contact" => "Contact",
+            "services" => "Services",
+            _ => "Home"
+        };
+    }
+
+    private string GetPageTitle()
+    {
+        return CurrentPage switch
+        {
+            "Doctors" => "Our Medical Specialists",
+            "Appointments" => "Book an Appointment",
+            "Departments" => "Our Departments",
+            "Contact" => "Contact Our Clinic",
+            "Services" => "Our Services",
+            _ => "Quality Healthcare Services"
+        };
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+}

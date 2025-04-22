@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\about.jpeg",
+      "PackagePath": "staticwebassets\\images\\about.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\advanced-diagnostics.jpeg",
+      "PackagePath": "staticwebassets\\images\\advanced-diagnostics.jpeg"
+    },
+    {
       "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-appointments.jpeg",
       "PackagePath": "staticwebassets\\images\\breadcrumb-appointments.jpeg"
     },
@@ -27,6 +35,30 @@
     {
       "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-services.jpeg",
       "PackagePath": "staticwebassets\\images\\breadcrumb-services.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology-department.jpeg",
+      "PackagePath": "staticwebassets\\images\\cardiology-department.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology.jpeg",
+      "PackagePath": "staticwebassets\\images\\cardiology.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\medical-hero-bg.jpeg",
+      "PackagePath": "staticwebassets\\images\\medical-hero-bg.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\neurology.jpeg",
+      "PackagePath": "staticwebassets\\images\\neurology.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\orthopedics.jpeg",
+      "PackagePath": "staticwebassets\\images\\orthopedics.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpeg",
+      "PackagePath": "staticwebassets\\images\\pediatrics.jpeg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HealthCare.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

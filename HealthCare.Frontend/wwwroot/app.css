@@ -506,6 +506,160 @@ body, html {
     }
 }
 
+/*--- Hero Section ---*/
+.hero-background-image {
+    background-image: url('/images/medical-hero-bg.jpeg');
+}
+
+.hero-section {
+    position: relative;
+    color: #e1e4e8;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome Message */
+.welcome-message {
+    max-width: 700px;
+}
+
+.text-teal-light {
+    color: #00e1ea;
+}
+
+.text-light-gray {
+    color: #e1e4e8;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #008f95;
+    border-color: #008f95;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #00b8bf;
+    border-color: #00b8bf;
+}
+
+.btn-outline-light {
+    border-color: #00b8bf;
+    color: #00e1ea;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(0, 184, 191, 0.1);
+    color: #00e1ea;
+}
+
+.btn-outline-teal {
+    border-color: #00e1ea;
+    color: #00e1ea;
+    background-color: transparent;
+}
+
+.btn-outline-teal:hover {
+    background-color: rgba(0, 225, 234, 0.1);
+}
+
+/* Feature Cards */
+.feature-card {
+    background-color: rgba(0, 61, 64, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.why-choose-us {
+    background-color: rgba(0, 102, 106, 0.8) !important;
+}
+
+.feature-icon {
+    color: #00e1ea;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3, .feature-card h4 {
+    color: #90ccfe;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #e1e4e8;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .welcome-message {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .features-grid .col-lg-4 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+}
+
 /*--- Appointment Container ---*/
 .appointment-container {
     max-width: 900px;
@@ -613,7 +767,162 @@ body, html {
     }
 }
 
-/* Medical Team Section */
+/*--- Appointment Form Container ---*/
+.appointment-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-header {
+    border-bottom: 2px solid rgba(0, 143, 149, 0.2);
+    padding-bottom: 1rem;
+}
+
+/* Form Elements */
+.medical-form .form-label {
+    color: #003d40;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.medical-form .form-control,
+.medical-form .form-select {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.medical-form .form-control:focus,
+.medical-form .form-select:focus {
+    border-color: #00b8bf;
+    box-shadow: 0 0 0 0.25rem rgba(0, 184, 191, 0.25);
+}
+
+.medical-form .form-text {
+    color: #646f77;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #008f95;
+    border-color: #008f95;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00666a;
+    border-color: #00666a;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    border-color: #646f77;
+    color: #646f77;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .appointment-form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
+    
+    .btn-primary {
+        margin-right: 0 !important;
+    }
+}
+
+/*--- FAQ Section ---*/
+.faq-section {
+    background-color: #f8f9fa;
+}
+
+/* Accordion Styling */
+.accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: rgba(0, 143, 149, 0.2);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: 8px;
+    --bs-accordion-inner-border-radius: 7px;
+    --bs-accordion-btn-padding-x: 1.5rem;
+    --bs-accordion-btn-padding-y: 1.25rem;
+    --bs-accordion-body-padding-x: 1.5rem;
+    --bs-accordion-body-padding-y: 1.5rem;
+    --bs-accordion-active-color: #001515;
+    --bs-accordion-active-bg: rgba(0, 184, 191, 0.1);
+}
+
+.accordion-button {
+    color: #008f95;
+    font-weight: 500;
+    background-color: rgba(0, 143, 149, 0.05);
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #001515;
+    background-color: rgba(0, 184, 191, 0.1);
+}
+
+.accordion-button:focus {
+    border-color: rgba(0, 143, 149, 0.2);
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23008f95'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23001515'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    color: #003d40;
+    background-color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .accordion-button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .accordion-body {
+        padding: 1rem;
+    }
+}
+
+
+/*--- Medical Team Section ---*/
 .medical-team {
     background-color: #f8f9fa;
 }
@@ -742,34 +1051,106 @@ body, html {
     }
 }
 
-/*--- Departments Section ---*/
-.departments {
-    background-color: #fff;
+/* Departments Section */
+.departments-section {
+    background-color: #f8f9fa;
 }
 
-.department-card {
-    background: white;
-    border-radius: 10px;
+/* Department Navigation */
+.department-nav-container {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    color: var(--dark-teal);
+    border: none;
+    border-left: 3px solid transparent;
+    padding: 1rem 1.25rem;
+    border-radius: 0;
+    font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
 
-.department-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 143, 149, 0.1);
+.nav-tabs .nav-link:hover {
+    color: var(--primary);
+    background-color: rgba(0, 184, 191, 0.05);
 }
 
-.department-icon {
+.nav-tabs .nav-link.active {
+    color: var(--primary);
     background-color: rgba(0, 184, 191, 0.1);
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-left: 3px solid var(--primary);
 }
+
+.nav-tabs .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Department Content */
+.tab-content {
+    min-height: 400px;
+}
+
+.department-subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.department-description {
+    color: var(--dark-teal);
+    line-height: 1.7;
+}
+
+.department-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.department-features li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .department-nav-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .nav-tabs {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .nav-tabs .nav-link {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+    
+    .nav-tabs .nav-link.active {
+        border-left: none;
+        border-bottom: 3px solid var(--primary);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tab-content {
+        padding: 1.5rem;
+    }
+    
+    .department-features li {
+        font-size: 0.95rem;
+    }
+}
+
 
 /* Services Section */
 .bg-light-gray {

@@ -53,5 +53,31 @@ public class AppointmentClient
         }
     ];
 
+    private readonly Doctor[] doctors = new DoctorsClient().GetDoctors();
+    private readonly Status[] statusses = new StatusClient().GetStatusses();
+
     public AppointmentSummary[] GetAppointments() => [.. appointments];
+
+    public void AddAppointment(AppointmentDetails appointment)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(appointment.DoctorId);
+        var doctor = doctors.Single(d => d.DoctorId == int.Parse(appointment.DoctorId));
+        var status = statusses.Single(s => s.StatusId == int.Parse(appointment.StatusId));
+
+        var appointmentSummary = new AppointmentSummary
+        {
+            PatientId = appointments.Count + 1,
+            Name = appointment.Name,
+            Doctor = doctor.DoctorName,
+            AppointmentDateTime = appointment.AppointmentDateTime,
+            Duration = appointment.Duration,
+            AppointmentType = appointment.AppointmentType,
+            Notes = appointment.Notes,
+            Status = status.CurrentStatus,
+            CreatedAt =appointment.CreatedAt
+        };
+
+        appointments.Add(appointmentSummary);
+     }
+
 }

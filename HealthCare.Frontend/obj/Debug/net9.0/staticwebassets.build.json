@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FX9MKMPiBeFdfBwGE6ZbF0f+S2q2r9ZGkpbXNmDnn38=",
+  "Hash": "SgSyRaAG4sBdo/kWSFWCBRt5g1Y5eqdwcK/1pAXUUs8=",
   "Source": "HealthCare.Frontend",
   "BasePath": "_content/HealthCare.Frontend",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-uc19irt593.gz",
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-rzdx0rpasx.gz",
       "SourceId": "HealthCare.Frontend",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/HealthCare.Frontend",
-      "RelativePath": "app#[.{fingerprint=uc19irt593}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=rzdx0rpasx}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -31,8 +31,8 @@
       "RelatedAsset": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "qfeco3kakw",
-      "Integrity": "6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI=",
+      "Fingerprint": "ajq0h6743b",
+      "Integrity": "qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\app.css"
@@ -136,11 +136,53 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uc19irt593",
-      "Integrity": "4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows=",
+      "Fingerprint": "rzdx0rpasx",
+      "Integrity": "FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\about.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/about#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c1jkb9v2iy",
+      "Integrity": "oEOO88TkIRjqA6ACwpFHy4RCI+efmnv24qwrGYfiXdo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\about.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\advanced-diagnostics.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/advanced-diagnostics#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2yigt4cb4w",
+      "Integrity": "Fu9s1Prk6Wqzcp3SEwdZkH5ph0A6W0I7wp89qvBOlmI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\advanced-diagnostics.jpeg"
     },
     {
       "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-appointments.jpeg",
@@ -246,17 +288,143 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\breadcrumb-services.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology-department.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/cardiology-department#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b942m74opq",
+      "Integrity": "DxTzsgUVjW5AT0sAxdHeoTagWoKJx2ql2LzRg+fgXIc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cardiology-department.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/cardiology#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ykzyfpdgj7",
+      "Integrity": "XtQlBesYeor/ypyohrkOto0zHsYCeF47ck9n71tNMKk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cardiology.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\medical-hero-bg.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/medical-hero-bg#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zcsu6v078j",
+      "Integrity": "7bKONO/B4fzgROaX9dC6TPnXAiXkfyWT6sKFpcFx/dQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\medical-hero-bg.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\neurology.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/neurology#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4yx1ebj5e4",
+      "Integrity": "HKwgc5IXu8AMrkncFcTUwwSKSQFvjg9y8t+Lf/+w4Hk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\neurology.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\orthopedics.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/orthopedics#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xkbwf0qjtw",
+      "Integrity": "Xy7lgS9dQebkcGyCl1ot3oEJKLkvDfheIPTyduJQbWA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\orthopedics.jpeg"
+    },
+    {
+      "Identity": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpeg",
+      "SourceId": "HealthCare.Frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\",
+      "BasePath": "_content/HealthCare.Frontend",
+      "RelativePath": "images/pediatrics#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5muj90aoq0",
+      "Integrity": "Q5U0CJIsU5Dy4dm/asM1asTNLxrDMw1EdomGmqQJvHw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pediatrics.jpeg"
     }
   ],
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-uc19irt593.gz",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-rzdx0rpasx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0,000263365815"
+          "Quality": "0,000199322304"
         }
       ],
       "ResponseHeaders": [
@@ -266,15 +434,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3796"
+          "Value": "5016"
         },
         {
           "Name": "ETag",
-          "Value": "\"6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI=\""
+          "Value": "\"qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -294,13 +462,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows=\""
+          "Value": "W/\"FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows="
+          "Value": "sha256-FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs="
         }
       ]
     },
@@ -315,7 +483,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21027"
+          "Value": "28769"
         },
         {
           "Name": "Content-Type",
@@ -323,11 +491,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows=\""
+          "Value": "\"FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -337,13 +505,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows="
+          "Value": "sha256-FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-uc19irt593.gz",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-rzdx0rpasx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -352,7 +520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3796"
+          "Value": "5016"
         },
         {
           "Name": "Content-Type",
@@ -360,11 +528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI=\""
+          "Value": "\"qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -382,18 +550,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI="
+          "Value": "sha256-qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg="
         }
       ]
     },
     {
-      "Route": "app.uc19irt593.css",
-      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-uc19irt593.gz",
+      "Route": "app.rzdx0rpasx.css",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-rzdx0rpasx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0,000263365815"
+          "Quality": "0,000199322304"
         }
       ],
       "ResponseHeaders": [
@@ -403,15 +571,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3796"
+          "Value": "5016"
         },
         {
           "Name": "ETag",
-          "Value": "\"6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI=\""
+          "Value": "\"qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -431,13 +599,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows=\""
+          "Value": "W/\"FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uc19irt593"
+          "Value": "rzdx0rpasx"
         },
         {
           "Name": "label",
@@ -445,12 +613,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows="
+          "Value": "sha256-FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs="
         }
       ]
     },
     {
-      "Route": "app.uc19irt593.css",
+      "Route": "app.rzdx0rpasx.css",
       "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -460,7 +628,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21027"
+          "Value": "28769"
         },
         {
           "Name": "Content-Type",
@@ -468,11 +636,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows=\""
+          "Value": "\"FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -482,7 +650,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uc19irt593"
+          "Value": "rzdx0rpasx"
         },
         {
           "Name": "label",
@@ -490,13 +658,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4uKbFI+D6d7Wyav039icPHPCmIZjhA1aRIP2CuZ9Ows="
+          "Value": "sha256-FyGuNhp7pDlF1jniXaL6tnAV+W41D+6fk9paBzurAOs="
         }
       ]
     },
     {
-      "Route": "app.uc19irt593.css.gz",
-      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-uc19irt593.gz",
+      "Route": "app.rzdx0rpasx.css.gz",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\obj\\Debug\\net9.0\\compressed\\2kar1u2obl-rzdx0rpasx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -505,7 +673,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3796"
+          "Value": "5016"
         },
         {
           "Name": "Content-Type",
@@ -513,11 +681,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI=\""
+          "Value": "\"qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 14:12:34 GMT"
+          "Value": "Tue, 22 Apr 2025 16:05:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -535,7 +703,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "uc19irt593"
+          "Value": "rzdx0rpasx"
         },
         {
           "Name": "label",
@@ -543,7 +711,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-6mfQYvFBqrnPX23T58NMpQweD8cjZzjyqxVbwMFMWaI="
+          "Value": "sha256-qoCai4GehI2O0ZpvsDUNct8wDc0klhxtass6e9gzCdg="
         }
       ]
     },
@@ -1144,6 +1312,170 @@
       ]
     },
     {
+      "Route": "images/about.c1jkb9v2iy.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\about.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "377431"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oEOO88TkIRjqA6ACwpFHy4RCI+efmnv24qwrGYfiXdo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:21:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c1jkb9v2iy"
+        },
+        {
+          "Name": "label",
+          "Value": "images/about.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oEOO88TkIRjqA6ACwpFHy4RCI+efmnv24qwrGYfiXdo="
+        }
+      ]
+    },
+    {
+      "Route": "images/about.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\about.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "377431"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oEOO88TkIRjqA6ACwpFHy4RCI+efmnv24qwrGYfiXdo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:21:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oEOO88TkIRjqA6ACwpFHy4RCI+efmnv24qwrGYfiXdo="
+        }
+      ]
+    },
+    {
+      "Route": "images/advanced-diagnostics.2yigt4cb4w.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\advanced-diagnostics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "456228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Fu9s1Prk6Wqzcp3SEwdZkH5ph0A6W0I7wp89qvBOlmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:11:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2yigt4cb4w"
+        },
+        {
+          "Name": "label",
+          "Value": "images/advanced-diagnostics.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Fu9s1Prk6Wqzcp3SEwdZkH5ph0A6W0I7wp89qvBOlmI="
+        }
+      ]
+    },
+    {
+      "Route": "images/advanced-diagnostics.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\advanced-diagnostics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "456228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Fu9s1Prk6Wqzcp3SEwdZkH5ph0A6W0I7wp89qvBOlmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:11:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Fu9s1Prk6Wqzcp3SEwdZkH5ph0A6W0I7wp89qvBOlmI="
+        }
+      ]
+    },
+    {
       "Route": "images/breadcrumb-appointments.j27ph2oxkj.jpeg",
       "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\breadcrumb-appointments.jpeg",
       "Selectors": [],
@@ -1166,7 +1498,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:56:28 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1211,7 +1543,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:56:28 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1248,7 +1580,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 11:12:28 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1285,7 +1617,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 11:12:28 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1330,7 +1662,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:53:02 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1375,7 +1707,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:53:02 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1412,7 +1744,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:55:16 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1457,7 +1789,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 10:55:16 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1494,7 +1826,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 11:01:00 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1531,7 +1863,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 11:01:00 GMT"
+          "Value": "Sat, 19 Apr 2025 15:01:32 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1550,6 +1882,498 @@
         {
           "Name": "integrity",
           "Value": "sha256-pAwdKrMWyYFMfukZh/WrldHBK++kkDZh5ZYIM6b1l/w="
+        }
+      ]
+    },
+    {
+      "Route": "images/cardiology-department.b942m74opq.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology-department.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "496879"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DxTzsgUVjW5AT0sAxdHeoTagWoKJx2ql2LzRg+fgXIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:24:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b942m74opq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cardiology-department.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DxTzsgUVjW5AT0sAxdHeoTagWoKJx2ql2LzRg+fgXIc="
+        }
+      ]
+    },
+    {
+      "Route": "images/cardiology-department.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology-department.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "496879"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DxTzsgUVjW5AT0sAxdHeoTagWoKJx2ql2LzRg+fgXIc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:24:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DxTzsgUVjW5AT0sAxdHeoTagWoKJx2ql2LzRg+fgXIc="
+        }
+      ]
+    },
+    {
+      "Route": "images/cardiology.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "705284"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XtQlBesYeor/ypyohrkOto0zHsYCeF47ck9n71tNMKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:36:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XtQlBesYeor/ypyohrkOto0zHsYCeF47ck9n71tNMKk="
+        }
+      ]
+    },
+    {
+      "Route": "images/cardiology.ykzyfpdgj7.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\cardiology.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "705284"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XtQlBesYeor/ypyohrkOto0zHsYCeF47ck9n71tNMKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:36:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ykzyfpdgj7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cardiology.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XtQlBesYeor/ypyohrkOto0zHsYCeF47ck9n71tNMKk="
+        }
+      ]
+    },
+    {
+      "Route": "images/medical-hero-bg.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\medical-hero-bg.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "266092"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7bKONO/B4fzgROaX9dC6TPnXAiXkfyWT6sKFpcFx/dQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Apr 2025 11:51:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7bKONO/B4fzgROaX9dC6TPnXAiXkfyWT6sKFpcFx/dQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/medical-hero-bg.zcsu6v078j.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\medical-hero-bg.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "266092"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7bKONO/B4fzgROaX9dC6TPnXAiXkfyWT6sKFpcFx/dQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 20 Apr 2025 11:51:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zcsu6v078j"
+        },
+        {
+          "Name": "label",
+          "Value": "images/medical-hero-bg.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7bKONO/B4fzgROaX9dC6TPnXAiXkfyWT6sKFpcFx/dQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/neurology.4yx1ebj5e4.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\neurology.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57258"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HKwgc5IXu8AMrkncFcTUwwSKSQFvjg9y8t+Lf/+w4Hk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4yx1ebj5e4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/neurology.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HKwgc5IXu8AMrkncFcTUwwSKSQFvjg9y8t+Lf/+w4Hk="
+        }
+      ]
+    },
+    {
+      "Route": "images/neurology.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\neurology.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "57258"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HKwgc5IXu8AMrkncFcTUwwSKSQFvjg9y8t+Lf/+w4Hk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:13:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HKwgc5IXu8AMrkncFcTUwwSKSQFvjg9y8t+Lf/+w4Hk="
+        }
+      ]
+    },
+    {
+      "Route": "images/orthopedics.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\orthopedics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194390"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xy7lgS9dQebkcGyCl1ot3oEJKLkvDfheIPTyduJQbWA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:16:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xy7lgS9dQebkcGyCl1ot3oEJKLkvDfheIPTyduJQbWA="
+        }
+      ]
+    },
+    {
+      "Route": "images/orthopedics.xkbwf0qjtw.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\orthopedics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "194390"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xy7lgS9dQebkcGyCl1ot3oEJKLkvDfheIPTyduJQbWA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:16:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xkbwf0qjtw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/orthopedics.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xy7lgS9dQebkcGyCl1ot3oEJKLkvDfheIPTyduJQbWA="
+        }
+      ]
+    },
+    {
+      "Route": "images/pediatrics.5muj90aoq0.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "367710"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q5U0CJIsU5Dy4dm/asM1asTNLxrDMw1EdomGmqQJvHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:17:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5muj90aoq0"
+        },
+        {
+          "Name": "label",
+          "Value": "images/pediatrics.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q5U0CJIsU5Dy4dm/asM1asTNLxrDMw1EdomGmqQJvHw="
+        }
+      ]
+    },
+    {
+      "Route": "images/pediatrics.jpeg",
+      "AssetFile": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "367710"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q5U0CJIsU5Dy4dm/asM1asTNLxrDMw1EdomGmqQJvHw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 16:17:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q5U0CJIsU5Dy4dm/asM1asTNLxrDMw1EdomGmqQJvHw="
         }
       ]
     }

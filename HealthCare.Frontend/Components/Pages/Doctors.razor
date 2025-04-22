@@ -23,26 +23,28 @@
 
         <div class="row g-4">
             <!-- Doctor 1 -->
+            @foreach (var doctor in doctors)
+            {
             <div class="col-lg-6">
                 <div class="doctor-card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img src="/images/doctors/cardiologist.jpg" class="img-fluid rounded-start" alt="Dr. Michael Chen">
+                            <img src="" class="img-fluid rounded-start" alt="Dr. Michael Chen">
                         </div>
                         <div class="col-md-7">
                             <div class="doctor-info p-4">
-                                <h3 class="doctor-name">Dr. Michael Chen</h3>
-                                <span class="doctor-specialty">Cardiologist</span>
-                                <p class="doctor-bio mt-3">Harvard-trained cardiologist with 15 years experience in interventional procedures. Specializes in complex coronary interventions and preventive cardiology.</p>
+                                <h3 class="doctor-name">@doctor.DoctorName</h3>
+                                <span class="doctor-specialty">@doctorDetails[doctor.DoctorName].Specialty</span>
+                                <p class="doctor-bio mt-3">@doctorDetails[doctor.DoctorName].Bio</p>
                                 
                                 <div class="doctor-meta mt-3">
                                     <div class="meta-item">
                                         <i class="fas fa-graduation-cap me-2"></i>
-                                        <span>Johns Hopkins University</span>
+                                        <span class="doctor-specialty">@doctorDetails[doctor.DoctorName].Education</span>
                                     </div>
                                     <div class="meta-item">
                                         <i class="fas fa-certificate me-2"></i>
-                                        <span>Board Certified</span>
+                                        <span class="doctor-specialty">@doctorDetails[doctor.DoctorName].Certified</span>
                                     </div>
                                 </div>
                                 
@@ -56,116 +58,29 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Doctor 2 -->
-            <div class="col-lg-6">
-                <div class="doctor-card">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="/images/doctors/pediatrician.jpg" class="img-fluid rounded-start" alt="Dr. Sarah Johnson">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="doctor-info p-4">
-                                <h3 class="doctor-name">Dr. Sarah Johnson</h3>
-                                <span class="doctor-specialty">Pediatrician</span>
-                                <p class="doctor-bio mt-3">Specializing in childhood development and adolescent medicine. Focused on creating a comfortable environment for young patients and their families.</p>
-                                
-                                <div class="doctor-meta mt-3">
-                                    <div class="meta-item">
-                                        <i class="fas fa-graduation-cap me-2"></i>
-                                        <span>Stanford University</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-certificate me-2"></i>
-                                        <span>Fellow, AAP</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="doctor-social mt-4">
-                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor 3 -->
-            <div class="col-lg-6">
-                <div class="doctor-card">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="/images/doctors/neurologist.jpg" class="img-fluid rounded-start" alt="Dr. William Anderson">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="doctor-info p-4">
-                                <h3 class="doctor-name">Dr. William Anderson</h3>
-                                <span class="doctor-specialty">Neurologist</span>
-                                <p class="doctor-bio mt-3">Specializes in movement disorders and neurodegenerative diseases. Pioneering researcher in Parkinson's disease treatments with over 50 published papers.</p>
-                                
-                                <div class="doctor-meta mt-3">
-                                    <div class="meta-item">
-                                        <i class="fas fa-graduation-cap me-2"></i>
-                                        <span>Mayo Clinic</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-certificate me-2"></i>
-                                        <span>Fellow, AAN</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="doctor-social mt-4">
-                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Doctor 4 -->
-            <div class="col-lg-6">
-                <div class="doctor-card">
-                    <div class="row g-0">
-                        <div class="col-md-5">
-                            <img src="/images/doctors/orthopedic.jpg" class="img-fluid rounded-start" alt="Dr. Amanda Jepson">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="doctor-info p-4">
-                                <h3 class="doctor-name">Dr. Amanda Jepson</h3>
-                                <span class="doctor-specialty">Orthopedic Surgeon</span>
-                                <p class="doctor-bio mt-3">Specializes in sports medicine and joint preservation techniques. Team physician for several collegiate athletic programs and former Olympic consultant.</p>
-                                
-                                <div class="doctor-meta mt-3">
-                                    <div class="meta-item">
-                                        <i class="fas fa-graduation-cap me-2"></i>
-                                        <span>Duke University</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-certificate me-2"></i>
-                                        <span>Board Certified</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="doctor-social mt-4">
-                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                                    <a href="#" class="social-link"><i class="fas fa-calendar-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
 
 @code {
+    private Dictionary<string, (string Specialty, string Bio, string Education, bool Certified)> doctorDetails = new()
+    {
+        { "Dr. Smith", ("Cardiology", "Board-certified cardiologist with 12 years of experience specializing in interventional procedures.", "University of Cape Town Faculty of Health Sciences", true) },
+        { "Dr. Johnson", ("Neurology", "Leading neurologist specializing in movement disorders and neurodegenerative diseases.", "Stellenbosch University Faculty of Medicine and Health Sciences", true) },
+        { "Dr. Williams", ("Pediatrics", "Compassionate pediatrician with special interest in developmental disorders and adolescent medicine.", "University of Cape Town Faculty of Health Sciences", true) },
+        { "Dr. Brown", ("Orthopedic Surgery", "Expert in joint replacement and sports medicine with minimally invasive techniques.", "University of the Western Cape Faculty of Dentistry and Health Sciences", true) },
+        { "Dr. Davis", ("Dermatology", "Specialized in treating complex skin conditions and dermatological oncology.", "University of Cape Town Faculty of Health Sciences with fellowship at Groote Schuur Hospital", true) }
+    };
+    private DoctorsClient doctorsClient = new();
+
+    private Doctor[] doctors;
+
+    protected override void OnInitialized()
+    {
+      doctors = doctorsClient.GetDoctors();
+    }
+
     private string CurrentPage => GetCurrentPage();
     private string PageTitle => GetPageTitle();
 
