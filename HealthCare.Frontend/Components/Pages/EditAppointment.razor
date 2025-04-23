@@ -1,6 +1,9 @@
 ﻿@page "/editappointment"
 @using HealthCare.Frontend.Clients
 @using HealthCare.Frontend.Models
+@inject NavigationManager NavigationManager
+@inject DoctorsClient DoctorsClient
+@inject StatusClient StatusClient
 
 <PageTitle>Edit Appointment</PageTitle>
 
@@ -170,25 +173,23 @@ else
         CreatedAt = DateTime.Now,
         Duration = TimeSpan.FromMinutes(30) // Default 30 minute appointment
     };
-    private DoctorsClient doctorsClient = new();
 
     private Doctor[] doctors;
-
-    private StatusClient statusClient = new();
 
     private Status[] statusses;
 
     protected override void OnInitialized()
     {
-      doctors = doctorsClient.GetDoctors();
-      statusses = statusClient.GetStatusses();
+      doctors = DoctorsClient.GetDoctors();
+      statusses = StatusClient.GetStatusses();
     }
 
     private AppointmentClient appointmentClient = new();
 
-     private void HandleSubmit()
+    private void HandleSubmit()
     {
-      appointmentClient.AddAppointment(appointment);
+        appointmentClient.AddAppointment(appointment);
+        NavigationManager.NavigateTo("/");
     }
 
     private string CurrentPage => GetCurrentPage();
@@ -233,6 +234,4 @@ else
             _ => "Quality Healthcare Services"
         };
     }
-
-    [Inject] private NavigationManager NavigationManager { get; set; }
 }

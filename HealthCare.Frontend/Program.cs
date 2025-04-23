@@ -1,9 +1,14 @@
+using HealthCare.Frontend.Clients;
 using HealthCare.Frontend.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
+
+builder.Services.AddSingleton<AppointmentClient>();
+builder.Services.AddSingleton<DoctorsClient>();
+builder.Services.AddSingleton<StatusClient>();
 
 var app = builder.Build();
 
