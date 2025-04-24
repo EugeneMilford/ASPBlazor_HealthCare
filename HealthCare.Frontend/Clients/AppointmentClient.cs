@@ -1,4 +1,5 @@
 using System;
+using HealthCare.Frontend.Components.Pages;
 using HealthCare.Frontend.Models;
 
 namespace HealthCare.Frontend.Clients;
@@ -78,6 +79,35 @@ public class AppointmentClient
         };
 
         appointments.Add(appointmentSummary);
-     }
+    }
 
+    public AppointmentDetails GetAppointment(int id)
+    {
+        AppointmentSummary? appointment = appointments.Find(appointment => appointment.PatientId == id);
+
+        ArgumentNullException.ThrowIfNull(appointment);
+
+        var doctor = appointments.Single(doctor => string.Equals(
+            appointment.Name, 
+            appointment.Doctor, 
+            StringComparison.OrdinalIgnoreCase));
+
+        var status = appointments.Single(status => string.Equals(
+            appointment.Name, 
+            appointment.Status, 
+            StringComparison.OrdinalIgnoreCase));
+
+        return new AppointmentDetails
+        {
+            PatientId = appointment.PatientId,
+            Name = appointment.Name,
+            DoctorId = doctor.PatientId.ToString(),
+            AppointmentDateTime = appointment.AppointmentDateTime,
+            Duration = appointment.Duration,
+            AppointmentType = appointment.AppointmentType,
+            Notes = appointment.Notes,
+            StatusId = status.PatientId.ToString(),
+            CreatedAt = appointment.CreatedAt
+        };
+    }
 }

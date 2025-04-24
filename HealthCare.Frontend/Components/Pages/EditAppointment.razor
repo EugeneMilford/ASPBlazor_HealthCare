@@ -33,6 +33,7 @@ else
     </div>
 
     <EditForm Model="@appointment" FormName="EditAppointment" class="medical-form" OnSubmit="HandleSubmit">
+        <DataAnnotationsValidator/>
         <div class="row g-3">
             <!-- Patient Information -->
             <div class="col-md-6">
@@ -42,6 +43,7 @@ else
                     </label>
                     <InputText id="name" @bind-Value="appointment.Name" class="form-control" />
                     <div class="form-text">Full legal name as it appears on insurance</div>
+                    <ValidationMessage For="() => appointment.Name"/>
                 </div>
             </div>
 
@@ -58,6 +60,7 @@ else
                             <option value="@doctor.DoctorId">@doctor.DoctorName</option>
                         }
                     </InputSelect>
+                    <ValidationMessage For="() => appointment.DoctorId"/>
                 </div>
             </div>
 
@@ -68,6 +71,7 @@ else
                         <i class="fas fa-calendar-day me-2"></i>Appointment Date
                     </label>
                     <InputDate @bind-Value="appointment.AppointmentDateTime" id="appointmentDate" class="form-control" />
+                    <ValidationMessage For="() => appointment.AppointmentDateTime"/>
                 </div>
             </div>
 
@@ -90,6 +94,7 @@ else
             <option value="15:30">15:30</option>
             <option value="16:00">16:00</option>
         </InputSelect>
+        <ValidationMessage For="() => appointment.AppointmentDateTime"/>
     </div>
 
             <!-- Duration and Type -->
@@ -122,6 +127,7 @@ else
                         <option value="Annual Checkup">Annual Checkup</option>
                         <option value="Emergency">Emergency</option>
                     </InputSelect>
+                    <ValidationMessage For="() => appointment.AppointmentType"/>
                 </div>
             </div>
 
@@ -138,6 +144,7 @@ else
                             <option value="@status.StatusId">@status.CurrentStatus</option>
                         }
                     </InputSelect>
+                    <ValidationMessage For="() => appointment.StatusId"/>
                 </div>
             </div>
 
