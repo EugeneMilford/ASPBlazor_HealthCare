@@ -1,6 +1,8 @@
 @page "/appointments"
 @inject AppointmentClient Client
+@inject NavigationManager NavigationManager
 @using HealthCare.Frontend.Clients
+@rendermode InteractiveServer
 
 <PageTitle>Scheduled Appointments</PageTitle>
 
@@ -16,81 +18,129 @@
 </div>
 
 <div class="appointment-container">
-    <h2 class="appointment-header text-center mb-4">
-        <i class="fas fa-calendar-check me-2"></i>Upcoming Appointments
-    </h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="appointment-header">
+            <i class="fas fa-calendar-check me-2"></i>Upcoming Appointments
+        </h2>
+        <a href="/editappointment" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>New Appointment
+        </a>
+    </div>
     
-    <div class="appointment-list">
-        @foreach (var appointment in appointments)
-        {
-            <div class="appointment-card @appointment.Status.ToLower() mb-4">
-                <div class="appointment-card-header d-flex justify-content-between align-items-center p-3">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-user-circle me-3 fa-2x"></i>
-                        <span class="patient-name h5 mb-0">@appointment.Name</span>
-                    </div>
-                    <span class="appointment-status badge rounded-pill px-3 py-2">
-                        @appointment.Status
-                    </span>
-                </div>
-                
-                <div class="appointment-details p-3">
-                    <div class="detail-row row mb-2">
-                        <div class="col-4 detail-label">
-                            <i class="fas fa-user-md me-2"></i>Doctor:
+    @if (appointments == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else if (appointments.Length == 0)
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>No appointments found. Click "New Appointment" to schedule one.
+        </div>
+    }
+    else
+    {
+        <div class="appointment-list">
+            @foreach (var appointment in appointments)
+            {
+                <div class="appointment-card @appointment.Status.ToLower() mb-4">
+                    <div class="appointment-card-header d-flex justify-content-between align-items-center p-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-user-circle me-3 fa-2x"></i>
+                            <span class="patient-name h5 mb-0">@appointment.Name</span>
                         </div>
-                        <div class="col-8 detail-value fw-bold">
-                            @appointment.Doctor
-                        </div>
-                    </div>
-                    <div class="detail-row row mb-2">
-                        <div class="col-4 detail-label">
-                            <i class="fas fa-clock me-2"></i>Date/Time:
-                        </div>
-                        <div class="col-8 detail-value">
-                            @appointment.AppointmentDateTime.ToString("f")
-                        </div>
-                    </div>
-                    <div class="detail-row row mb-2">
-                        <div class="col-4 detail-label">
-                            <i class="fas fa-stopwatch me-2"></i>Duration:
-                        </div>
-                        <div class="col-8 detail-value">
-                            @appointment.Duration.ToString(@"hh\:mm")
-                        </div>
-                    </div>
-                    <div class="detail-row row">
-                        <div class="col-4 detail-label">
-                            <i class="fas fa-stethoscope me-2"></i>Type:
-                        </div>
-                        <div class="col-8 detail-value">
-                            @appointment.AppointmentType
-                        </div>
-                    </div>
-                </div>
-                
-                @if (!string.IsNullOrEmpty(appointment.Notes))
-                {
-                    <div class="appointment-notes p-3 bg-light rounded-bottom">
-                        <span class="notes-label fw-bold d-block mb-2">
-                            <i class="fas fa-notes-medical me-2"></i>Notes:
+                        <span class="appointment-status badge rounded-pill px-3 py-2">
+                            @appointment.Status
                         </span>
-                        <p class="mb-0">@appointment.Notes</p>
                     </div>
-                }
+                    
+                    <div class="appointment-details p-3">
+                        <div class="detail-row row mb-2">
+                            <div class="col-4 detail-label">
+                                <i class="fas fa-user-md me-2"></i>Doctor:
+                            </div>
+                            <div class="col-8 detail-value fw-bold">
+                                @appointment.Doctor
+                            </div>
+                        </div>
+                        <div class="detail-row row mb-2">
+                            <div class="col-4 detail-label">
+                                <i class="fas fa-clock me-2"></i>Date/Time:
+                            </div>
+                            <div class="col-8 detail-value">
+                                @appointment.AppointmentDateTime.ToString("f")
+                            </div>
+                        </div>
+                        <div class="detail-row row mb-2">
+                            <div class="col-4 detail-label">
+                                <i class="fas fa-stopwatch me-2"></i>Duration:
+                            </div>
+                            <div class="col-8 detail-value">
+                                @appointment.Duration.ToString(@"hh\:mm")
+                            </div>
+                        </div>
+                        <div class="detail-row row">
+                            <div class="col-4 detail-label">
+                                <i class="fas fa-stethoscope me-2"></i>Type:
+                            </div>
+                            <div class="col-8 detail-value">
+                                @appointment.AppointmentType
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-footer d-flex justify-content-between p-3 @(string.IsNullOrEmpty(appointment.Notes) ? "rounded-bottom" : "")">
+                        @if (!string.IsNullOrEmpty(appointment.Notes))
+                        {
+                            <div class="appointment-notes bg-light rounded p-3 flex-grow-1 me-2">
+                                <span class="notes-label fw-bold d-block mb-2">
+                                    <i class="fas fa-notes-medical me-2"></i>Notes:
+                                </span>
+                                <p class="mb-0">@appointment.Notes</p>
+                            </div>
+                        }
+                        <div class="appointment-footer d-flex justify-content-between p-3">
+                        <!-- Edit button -->
+                <a href="/editappointment/@appointment.PatientId" class="btn btn-primary me-2">
+                    <i class="fas fa-edit me-2"></i>Edit
+                </a>
+        
+                <!-- Delete button - now navigates to delete page -->
+                <a href="/deleteappointment/@appointment.PatientId" class="btn btn-danger">
+                    <i class="fas fa-trash me-2"></i>Delete
+                </a>
             </div>
+        </div>
+    </div>
+
+                
         }
     </div>
+        
+    <div class="text-center mt-4">
+        <button @onclick="RefreshAppointments" class="btn btn-outline-secondary">
+            <i class="fas fa-sync-alt me-2"></i>Refresh List
+        </button>
+    </div>
+    }
 </div>
 
 @code {
-    private AppointmentClient client = new();
-
     private AppointmentSummary[] appointments;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        appointments = client.GetAppointments();
+        await LoadAppointments();
+    }
+    
+    private async Task LoadAppointments()
+    {
+        appointments = await Task.FromResult(Client.GetAppointments());
+    }
+    
+    private async Task RefreshAppointments()
+    {
+        await LoadAppointments();
+        StateHasChanged();
     }
 
     private string CurrentPage => GetCurrentPage();
@@ -136,6 +186,4 @@
             _ => "Quality Healthcare Services"
         };
     }
-
-    [Inject] private NavigationManager NavigationManager { get; set; }
 }

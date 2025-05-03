@@ -1,0 +1,126 @@
+﻿@page "/deleteappointment/{PatientId:int}"
+@inject AppointmentClient Client
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+
+<PageTitle>Delete Appointment</PageTitle>
+
+<!-- Breadcrumb -->
+<div class="container-fluid breadcrumb-container breadcrumb-appointments">
+    <div class="container text-center py-5">
+        <h1 class="text-white display-4 mb-4 fw-bold">@title</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+            <li class="breadcrumb-item"><a href="/appointments" class="text-white">Appointments</a></li>
+            <li class="breadcrumb-item active text-primary">Delete</li>
+        </ol>
+    </div>
+</div>
+
+<div class="container my-5">
+    @if (appointment == null)
+    {
+        <div class="alert alert-danger">
+            <i class="fas fa-exclamation-circle me-2"></i>Appointment not found
+        </div>
+    }
+    else
+    {
+        <div class="card shadow">
+            <div class="card-header bg-danger text-white">
+                <h2 class="h4 mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>@title
+                </h2>
+            </div>
+            
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    Are you sure you want to delete this appointment? This action cannot be undone.
+                </div>
+                
+                <div class="appointment-details p-4 border rounded">
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Patient:</div>
+                        <div class="col-md-9">@appointment.Name</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Doctor:</div>
+                        <div class="col-md-9">@appointment.Doctor</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Date/Time:</div>
+                        <div class="col-md-9">@appointment.AppointmentDateTime.ToString("f")</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Type:</div>
+                        <div class="col-md-9">@appointment.AppointmentType</div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(appointment.Notes))
+                    {
+                        <div class="row">
+                            <div class="col-md-3 fw-bold">Notes:</div>
+                            <div class="col-md-9">@appointment.Notes</div>
+                        </div>
+                    }
+                </div>
+            </div>
+            
+            <div class="card-footer bg-light d-flex justify-content-between">
+                <a href="/appointments" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Cancel
+                </a>
+                <button type="button" 
+                @onclick="ConfirmDelete" 
+                class="btn btn-danger">
+                <i class="fas fa-trash-alt me-2"></i>Confirm Delete
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int PatientId { get; set; }
+
+    private AppointmentSummary? appointment;
+    private string title = "Delete Appointment";
+    
+    protected override void OnInitialized()
+    {
+        appointment = Client.GetAppointmentById(PatientId.ToString());
+        
+        if (appointment != null)
+        {
+            title = $"Delete Appointment for {appointment.Name}";
+        }
+    }
+    
+    private async Task ConfirmDelete()
+    {
+        try 
+        {
+        if (appointment != null)
+        {
+            bool deleted = await Task.FromResult(Client.DeleteAppointment(PatientId));
+            if (deleted)
+            {
+                // Show success message
+                await JSRuntime.InvokeVoidAsync("alert", "Appointment deleted successfully!");
+                NavigationManager.NavigateTo("/appointments");
+            }
+            else
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "Failed to delete appointment.");
+            }
+        }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Error deleting appointment: {ex.Message}");
+        }
+    }
+
+}

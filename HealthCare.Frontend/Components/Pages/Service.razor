@@ -120,6 +120,74 @@
 </div>
 <!-- Services End -->
 
+<!-- Emergency Care Modal -->
+<div class="modal fade" id="emergencyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Emergency Care Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/medical-hero-bg.jpeg" class="img-fluid rounded mb-4" alt="Emergency Care">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">24/7 Emergency Medical Services</h4>
+                        <p>Our emergency department is staffed around the clock with board-certified emergency physicians and trained medical professionals ready to handle any medical crisis.</p>
+                        <ul class="mb-3">
+                            <li>Level III Trauma Center</li>
+                            <li>Pediatric emergency specialists</li>
+                            <li>Cardiac and stroke emergency care</li>
+                            <li>Rapid assessment and treatment</li>
+                        </ul>
+                        <p>We provide immediate care for all types of emergencies, from minor injuries to life-threatening conditions, with an average door-to-doctor time of under 15 minutes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cardiology Modal -->
+<div class="modal fade" id="cardiologyModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title text-dark">Cardiology Services</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="/images/cardiology.jpeg" class="img-fluid rounded mb-4" alt="Cardiology">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">Comprehensive Heart Care</h4>
+                        <p>Our cardiology department provides advanced diagnosis, treatment, and prevention of cardiovascular diseases with state-of-the-art technology and compassionate care.</p>
+                        <ul class="mb-3">
+                            <li>Cardiac catheterization and angioplasty</li>
+                            <li>Electrophysiology and arrhythmia treatment</li>
+                            <li>Echocardiography and stress testing</li>
+                            <li>Preventive cardiology and rehabilitation</li>
+                        </ul>
+                        <p>Our team of cardiologists, cardiac surgeons, and specialized nurses work together to provide personalized treatment plans for optimal heart health.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Orthopedics Modal -->
 <div class="modal fade" id="orthopedicsModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -255,8 +323,6 @@
         </div>
     </div>
 </div>
-
-
 
 @code {
     private string CurrentPage => GetCurrentPage();

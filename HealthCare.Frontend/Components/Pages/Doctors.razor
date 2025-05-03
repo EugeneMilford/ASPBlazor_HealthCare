@@ -22,14 +22,14 @@
         </div>
 
         <div class="row g-4">
-            <!-- Doctor 1 -->
+            <!-- Doctor Cards -->
             @foreach (var doctor in doctors)
             {
             <div class="col-lg-6">
                 <div class="doctor-card">
                     <div class="row g-0">
                         <div class="col-md-5">
-                            <img src="" class="img-fluid rounded-start" alt="Dr. Michael Chen">
+                            <img src="@GetDoctorImage(doctor.DoctorName)" class="img-fluid rounded-start h-100" alt="@doctor.DoctorName">
                         </div>
                         <div class="col-md-7">
                             <div class="doctor-info p-4">
@@ -72,13 +72,27 @@
         { "Dr. Brown", ("Orthopedic Surgery", "Expert in joint replacement and sports medicine with minimally invasive techniques.", "University of the Western Cape Faculty of Dentistry and Health Sciences", true) },
         { "Dr. Davis", ("Dermatology", "Specialized in treating complex skin conditions and dermatological oncology.", "University of Cape Town Faculty of Health Sciences with fellowship at Groote Schuur Hospital", true) }
     };
-    private DoctorsClient doctorsClient = new();
 
+    private Dictionary<string, string> doctorImages = new()
+    {
+        { "Dr. Smith", "/images/Michael-Smith.jpg" },
+        { "Dr. Johnson", "/images/Emily-Johnson.jpg" },
+        { "Dr. Williams", "/images/Justin-Williams.jpg" },
+        { "Dr. Brown", "/images/Melissa-Brown.jpg" },
+        { "Dr. Davis", "/images/Henry-Davis.jpg" }
+    };
+
+    private string GetDoctorImage(string doctorName)
+    {
+        return doctorImages.ContainsKey(doctorName) ? doctorImages[doctorName] : "/images/doctors/default-doctor.jpg";
+    }
+
+    private DoctorsClient doctorsClient = new();
     private Doctor[] doctors;
 
     protected override void OnInitialized()
     {
-      doctors = doctorsClient.GetDoctors();
+        doctors = doctorsClient.GetDoctors();
     }
 
     private string CurrentPage => GetCurrentPage();
