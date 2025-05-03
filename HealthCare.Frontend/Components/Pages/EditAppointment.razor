@@ -1,202 +1,322 @@
 ﻿@page "/editappointment"
+@page "/editappointment/{PatientId:int}"
+
 @using HealthCare.Frontend.Clients
 @using HealthCare.Frontend.Models
 @inject NavigationManager NavigationManager
 @inject DoctorsClient DoctorsClient
 @inject StatusClient StatusClient
+@inject AppointmentClient AppointmentClient
 
-<PageTitle>Edit Appointment</PageTitle>
+<PageTitle>@title</PageTitle>
 
-@if (doctors is null)
+@if (doctors is null || appointment is null)
 {
   <p><em>Loading...</em></p>
 }
 else
 {
-
-<!-- Breadcrumb -->
-<div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
-    <div class="container text-center py-5">
-        <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
-        <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
-            <li class="breadcrumb-item"><a href="/appointments" class="text-white">Appointments</a></li>
-            <li class="breadcrumb-item active text-primary">@CurrentPage</li>
-        </ol>    
-    </div>
-</div>
-
-<div class="appointment-form-container">
-    <div class="form-header mb-4">
-        <h3 class="text-primary"><i class="fas fa-calendar-plus me-2"></i>Edit Appointment</h3>
-        <p class="text-medium-gray">Please fill out all required fields to schedule your medical appointment</p>
-    </div>
-
-    <EditForm Model="@appointment" FormName="EditAppointment" class="medical-form" OnSubmit="HandleSubmit">
-        <DataAnnotationsValidator/>
-        <div class="row g-3">
-            <!-- Patient Information -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="name" class="form-label">
-                        <i class="fas fa-user me-2"></i>Patient Name
-                    </label>
-                    <InputText id="name" @bind-Value="appointment.Name" class="form-control" />
-                    <div class="form-text">Full legal name as it appears on insurance</div>
-                    <ValidationMessage For="() => appointment.Name"/>
-                </div>
-            </div>
-
-            <!-- Doctor Selection -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="doctor" class="form-label">
-                        <i class="fas fa-user-md me-2"></i>Doctor
-                    </label>
-                    <InputSelect @bind-Value="appointment.DoctorId" id="doctor" class="form-select">
-                        <option value="">Select doctor</option>
-                        @foreach (var doctor in doctors)
-                        {
-                            <option value="@doctor.DoctorId">@doctor.DoctorName</option>
-                        }
-                    </InputSelect>
-                    <ValidationMessage For="() => appointment.DoctorId"/>
-                </div>
-            </div>
-
-            <!-- Date and Time -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="appointmentDate" class="form-label">
-                        <i class="fas fa-calendar-day me-2"></i>Appointment Date
-                    </label>
-                    <InputDate @bind-Value="appointment.AppointmentDateTime" id="appointmentDate" class="form-control" />
-                    <ValidationMessage For="() => appointment.AppointmentDateTime"/>
-                </div>
-            </div>
-
-            <div class="mb-3">
-        <label for="appointmentTime" class="form-label">Appointment Time:</label>
-        <InputSelect @bind-Value="appointment.AppointmentDateTime " id="appointmentTime" class="form-control">
-            <option value="08:00">08:00</option>
-            <option value="08:30">08:30</option>
-            <option value="09:00">09:00</option>
-            <option value="09:30">09:30</option>
-            <option value="10:00">10:00</option>
-            <option value="10:30">10:30</option>
-            <option value="11:00">11:00</option>
-            <option value="11:30">11:30</option>
-            <option value="13:00">13:00</option>
-            <option value="13:30">13:30</option>
-            <option value="14:00">14:00</option>
-            <option value="14:30">14:30</option>
-            <option value="15:00">15:00</option>
-            <option value="15:30">15:30</option>
-            <option value="16:00">16:00</option>
-        </InputSelect>
-        <ValidationMessage For="() => appointment.AppointmentDateTime"/>
-    </div>
-
-            <!-- Duration and Type -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="duration" class="form-label">
-                        <i class="fas fa-stopwatch me-2"></i>Duration (minutes)
-                    </label>
-                    <input type="number" 
-                           value="@((int)appointment.Duration.TotalMinutes)" 
-                           @onchange="@(e => appointment.Duration = TimeSpan.FromMinutes(int.Parse(e.Value?.ToString() ?? "30")))" 
-                           id="duration" 
-                           class="form-control"
-                           min="15"
-                           max="120"
-                           step="15" />
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="appointmenttype" class="form-label">
-                        <i class="fas fa-stethoscope me-2"></i>Appointment Type
-                    </label>
-                    <InputSelect @bind-Value="appointment.AppointmentType" id="appointmenttype" class="form-select">
-                        <option value="">Select type</option>
-                        <option value="Consultation">Consultation</option>
-                        <option value="Follow-up">Follow-up</option>
-                        <option value="Procedure">Procedure</option>
-                        <option value="Annual Checkup">Annual Checkup</option>
-                        <option value="Emergency">Emergency</option>
-                    </InputSelect>
-                    <ValidationMessage For="() => appointment.AppointmentType"/>
-                </div>
-            </div>
-
-            <!-- Status and Notes -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="statusId" class="form-label">
-                        <i class="fas fa-info-circle me-2"></i>Status
-                    </label>
-                    <InputSelect @bind-Value="appointment.StatusId" id="statusId" class="form-select">
-                        <option value="">Select Status</option>
-                        @foreach (var status in statusses)
-                        {
-                            <option value="@status.StatusId">@status.CurrentStatus</option>
-                        }
-                    </InputSelect>
-                    <ValidationMessage For="() => appointment.StatusId"/>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <div class="form-group">
-                    <label for="notes" class="form-label">
-                        <i class="fas fa-notes-medical me-2"></i>Notes
-                    </label>
-                    <InputTextArea @bind-Value="appointment.Notes" id="notes" class="form-control" rows="4" />
-                </div>
-            </div>
-
-            <!-- Form Actions -->
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-primary me-3">
-                    <i class="fas fa-save me-2"></i>Save Appointment
-                </button>
-                <button type="button" class="btn btn-outline-secondary">
-                    <i class="fas fa-times me-2"></i>Cancel
-                </button>
-            </div>
+    <!-- Breadcrumb -->
+    <div class="container-fluid breadcrumb-container @GetBreadcrumbClass()">
+        <div class="container text-center py-5">
+            <h1 class="text-white display-4 mb-4 fw-bold">@PageTitle</h1>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+                <li class="breadcrumb-item"><a href="/appointments" class="text-white">Appointments</a></li>
+                <li class="breadcrumb-item active text-primary">@CurrentPage</li>
+            </ol>    
         </div>
-    </EditForm>
-</div>
+    </div>
+
+    <div class="appointment-form-container">
+        <div class="form-header mb-4">
+            <h3 class="text-primary"><i class="fas fa-calendar-plus me-2"></i>@title</h3>
+            <p class="text-medium-gray">Please fill out all required fields to schedule your medical appointment</p>
+        </div>
+
+        @if (showSuccessMessage)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="fas fa-check-circle me-2"></i>Appointment successfully saved!
+                <button type="button" class="btn-close" @onclick="() => showSuccessMessage = false"></button>
+            </div>
+        }
+
+        <EditForm Model="@appointment" FormName="EditAppointment" class="medical-form" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator/>
+            <div class="row g-3">
+                <!-- Patient Information -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <i class="fas fa-user me-2"></i>Patient Name
+                        </label>
+                        <InputText id="name" @bind-Value="appointment.Name" class="form-control" />
+                        <div class="form-text">Full legal name as it appears on insurance</div>
+                        <ValidationMessage For="() => appointment.Name"/>
+                    </div>
+                </div>
+
+                <!-- Doctor Selection -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="doctor" class="form-label">
+                            <i class="fas fa-user-md me-2"></i>Doctor
+                        </label>
+                        <InputSelect @bind-Value="appointment.DoctorId" id="doctor" class="form-select">
+                            <option value="">Select doctor</option>
+                            @foreach (var doctor in doctors)
+                            {
+                                <option value="@doctor.DoctorId">@doctor.DoctorName</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => appointment.DoctorId"/>
+                    </div>
+                </div>
+
+                <!-- Date and Time -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="appointmentDate" class="form-label">
+                            <i class="fas fa-calendar-day me-2"></i>Appointment Date
+                        </label>
+                        <InputDate @bind-Value="appointmentDate" id="appointmentDate" class="form-control" />
+                        <ValidationMessage For="() => appointment.AppointmentDateTime"/>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="appointmentTime" class="form-label">
+                            <i class="far fa-clock me-2"></i>Appointment Time
+                        </label>
+                        <InputSelect @bind-Value="selectedTime" id="appointmentTime" class="form-select">
+                            <option value="08:00">08:00</option>
+                            <option value="08:30">08:30</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:30">09:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                        </InputSelect>
+                    </div>
+                </div>
+
+                <!-- Duration and Type -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="duration" class="form-label">
+                            <i class="fas fa-stopwatch me-2"></i>Duration (minutes)
+                        </label>
+                        <InputNumber @bind-Value="@durationMinutes" id="duration" class="form-control"
+                   min="15" max="120" step="15" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="appointmenttype" class="form-label">
+                            <i class="fas fa-stethoscope me-2"></i>Appointment Type
+                        </label>
+                        <InputSelect @bind-Value="appointment.AppointmentType" id="appointmenttype" class="form-select">
+                            <option value="">Select type</option>
+                            <option value="Consultation">Consultation</option>
+                            <option value="Follow-up">Follow-up</option>
+                            <option value="Procedure">Procedure</option>
+                            <option value="Annual Checkup">Annual Checkup</option>
+                            <option value="Emergency">Emergency</option>
+                        </InputSelect>
+                        <ValidationMessage For="() => appointment.AppointmentType"/>
+                    </div>
+                </div>
+
+                <!-- Status and Notes -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="statusId" class="form-label">
+                            <i class="fas fa-info-circle me-2"></i>Status
+                        </label>
+                        <InputSelect @bind-Value="appointment.StatusId" id="statusId" class="form-select">
+                            <option value="">Select Status</option>
+                            @foreach (var status in statusses)
+                            {
+                                <option value="@status.StatusId">@status.CurrentStatus</option>
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="() => appointment.StatusId"/>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="notes" class="form-label">
+                            <i class="fas fa-notes-medical me-2"></i>Notes
+                        </label>
+                        <InputTextArea @bind-Value="appointment.Notes" id="notes" class="form-control" rows="4" />
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary me-3">
+                        <i class="fas fa-save me-2"></i>Save Appointment
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" @onclick="CancelEdit">
+                        <i class="fas fa-times me-2"></i>Cancel
+                    </button>
+                </div>
+            </div>
+        </EditForm>
+    </div>
 }
 
 @code {
+    [Parameter]
+    public int PatientId {get; set;}
+
     [SupplyParameterFromForm]
-
-    private AppointmentDetails appointment { get; set; } = new()
-    {
-        Name = string.Empty,
-        CreatedAt = DateTime.Now,
-        Duration = TimeSpan.FromMinutes(30) // Default 30 minute appointment
-    };
-
+    private AppointmentDetails? appointment { get; set; } 
+    
     private Doctor[] doctors;
-
     private Status[] statusses;
+    private string title = string.Empty;
+    private bool showSuccessMessage = false;
+    
+    // New fields for date/time handling
+    private DateTime appointmentDate;
+    private string selectedTime = "08:00";
+
+    protected override void OnParametersSet()
+    {
+        if(appointment is not null)
+        {
+            return;
+        }
+    
+        // Check if PatientId has a valid value (not the default 0)
+        if(PatientId > 0)
+        {
+            appointment = AppointmentClient.GetAppointment(PatientId);
+            title = $"Edit {appointment.Name}'s details";
+            
+            // Set the separate date and time values
+            appointmentDate = appointment.AppointmentDateTime.Date;
+            selectedTime = $"{appointment.AppointmentDateTime.Hour:D2}:{appointment.AppointmentDateTime.Minute:D2}";
+        }
+        else
+        {
+            appointment = new()
+            {
+                Name = string.Empty,
+                AppointmentDateTime = DateTime.Now.Date.AddHours(14).AddMinutes(30),
+                Duration = TimeSpan.FromMinutes(30),
+                AppointmentType = string.Empty,
+                Notes = string.Empty,
+                CreatedAt = DateTime.Now
+            };
+            
+            // Set the separate date and time values for new appointments
+            appointmentDate = appointment.AppointmentDateTime.Date;
+            selectedTime = $"{appointment.AppointmentDateTime.Hour:D2}:{appointment.AppointmentDateTime.Minute:D2}";
+            
+            title = "New Appointment";
+        }
+    }
 
     protected override void OnInitialized()
     {
-      doctors = DoctorsClient.GetDoctors();
-      statusses = StatusClient.GetStatusses();
+        doctors = DoctorsClient.GetDoctors();
+        statusses = StatusClient.GetStatusses();
     }
 
-    private AppointmentClient appointmentClient = new();
+    // Method to combine date and time before submission
+    private void CombineDateAndTime()
+    {
+        if (appointment != null)
+        {
+            var timeParts = selectedTime.Split(':');
+            int hours = int.Parse(timeParts[0]);
+            int minutes = int.Parse(timeParts[1]);
+            
+            appointment.AppointmentDateTime = new DateTime(
+                appointmentDate.Year,
+                appointmentDate.Month,
+                appointmentDate.Day,
+                hours,
+                minutes,
+                0
+            );
+        }
+    }
 
     private void HandleSubmit()
+{
+    if (appointment is null) return;
+    
+    try
     {
-        appointmentClient.AddAppointment(appointment);
-        NavigationManager.NavigateTo("/");
+        // Combine date and time before saving
+        var timeParts = selectedTime.Split(':');
+        int hours = int.Parse(timeParts[0]);
+        int minutes = int.Parse(timeParts[1]);
+        
+        appointment.AppointmentDateTime = new DateTime(
+            appointmentDate.Year,
+            appointmentDate.Month,
+            appointmentDate.Day,
+            hours,
+            minutes,
+            0
+        );
+
+        // Ensure duration is set (default to 30 minutes if not)
+        if (appointment.Duration == TimeSpan.Zero)
+        {
+            appointment.Duration = TimeSpan.FromMinutes(30);
+        }
+
+        if (PatientId > 0) // Editing existing appointment
+        {
+            appointment.PatientId = PatientId;
+            AppointmentClient.UpdateAppointment(appointment);
+        }
+        else // Adding new appointment
+        {
+            AppointmentClient.AddAppointment(appointment);
+        }
+
+        showSuccessMessage = true;
+        NavigationManager.NavigateTo("/appointments");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error saving appointment: {ex.Message}");
+    }
+}
+
+    private int durationMinutes
+    {
+    get => (int)(appointment?.Duration.TotalMinutes ?? 30);
+    set
+    {
+        if (appointment != null)
+        {
+            appointment.Duration = TimeSpan.FromMinutes(value);
+        }
+    }
+    }
+    
+    private void CancelEdit()
+    {
+        NavigationManager.NavigateTo("/appointments");
     }
 
     private string CurrentPage => GetCurrentPage();
@@ -215,6 +335,7 @@ else
             _ => "breadcrumb-home"
         };
     }
+    
     private string GetCurrentPage()
     {
         var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
@@ -228,7 +349,6 @@ else
             _ => "Home"
         };
     }
-
     private string GetPageTitle()
     {
         return CurrentPage switch

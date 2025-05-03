@@ -9,6 +9,30 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Emily-Johnson.jpg",
+      "PackagePath": "staticwebassets\\images\\Emily-Johnson.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Eye-care.jpeg",
+      "PackagePath": "staticwebassets\\images\\Eye-care.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Henry-Davis.jpg",
+      "PackagePath": "staticwebassets\\images\\Henry-Davis.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Justin-Williams.jpg",
+      "PackagePath": "staticwebassets\\images\\Justin-Williams.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Melissa-Brown.jpg",
+      "PackagePath": "staticwebassets\\images\\Melissa-Brown.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\Michael-Smith.jpg",
+      "PackagePath": "staticwebassets\\images\\Michael-Smith.jpg"
+    },
+    {
       "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\about.jpeg",
       "PackagePath": "staticwebassets\\images\\about.jpeg"
     },
@@ -45,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\cardiology.jpeg"
     },
     {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\hepatology.jpeg",
+      "PackagePath": "staticwebassets\\images\\hepatology.jpeg"
+    },
+    {
       "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\medical-hero-bg.jpeg",
       "PackagePath": "staticwebassets\\images\\medical-hero-bg.jpeg"
     },
@@ -59,6 +87,10 @@
     {
       "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpeg",
       "PackagePath": "staticwebassets\\images\\pediatrics.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\HealthCare\\HealthCare.Frontend\\wwwroot\\images\\pediatrics.jpg",
+      "PackagePath": "staticwebassets\\images\\pediatrics.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HealthCare.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
