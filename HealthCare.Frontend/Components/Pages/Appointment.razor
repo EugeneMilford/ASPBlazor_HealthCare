@@ -1,4 +1,5 @@
 @page "/appointments"
+
 @inject AppointmentClient Client
 @inject NavigationManager NavigationManager
 @using HealthCare.Frontend.Clients
@@ -100,11 +101,11 @@
                         }
                         <div class="appointment-footer d-flex justify-content-between p-3">
                         <!-- Edit button -->
-                <a href="/editappointment/@appointment.PatientId" class="btn btn-primary me-2">
+                <a href="@AppointmentUrl(appointment.PatientId)" class="btn btn-primary me-2">
                     <i class="fas fa-edit me-2"></i>Edit
                 </a>
         
-                <!-- Delete button - now navigates to delete page -->
+                <!-- Delete button -->
                 <a href="/deleteappointment/@appointment.PatientId" class="btn btn-danger">
                     <i class="fas fa-trash me-2"></i>Delete
                 </a>
@@ -115,26 +116,22 @@
                 
         }
     </div>
-        
-    <div class="text-center mt-4">
-        <button @onclick="RefreshAppointments" class="btn btn-outline-secondary">
-            <i class="fas fa-sync-alt me-2"></i>Refresh List
-        </button>
-    </div>
     }
 </div>
 
 @code {
     private AppointmentSummary[] appointments;
 
+    private static string AppointmentUrl(int id) => $"/editappointment/{id}";
+
     protected override async Task OnInitializedAsync()
     {
         await LoadAppointments();
     }
-    
+
     private async Task LoadAppointments()
     {
-        appointments = await Task.FromResult(Client.GetAppointments());
+        appointments = await Client.GetAppointmentsAsync();
     }
     
     private async Task RefreshAppointments()

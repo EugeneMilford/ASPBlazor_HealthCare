@@ -1,5 +1,6 @@
 using HealthCare.Frontend.Clients;
 using HealthCare.Frontend.Components;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,10 +8,37 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+var healthCareAPIUrl = builder.Configuration["HealthCareAPIUrl"] ??
+    throw new Exception("HealthCareAPIUrl is not set");
 
-builder.Services.AddSingleton<AppointmentClient>();
-builder.Services.AddSingleton<DoctorsClient>();
-builder.Services.AddSingleton<StatusClient>();
+// Configure default JsonSerializerOptions for HttpClient requests
+var jsonOptions = new JsonSerializerOptions
+{
+    PropertyNameCaseInsensitive = true,
+    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+};
+
+// Register JsonSerializerOptions as a singleton
+builder.Services.AddSingleton(jsonOptions);
+
+// Configure HTTP clients
+builder.Services.AddHttpClient<AppointmentClient>(client => 
+{
+    client.BaseAddress = new Uri(healthCareAPIUrl);
+    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+});
+
+builder.Services.AddHttpClient<DoctorsClient>(client => 
+{
+    client.BaseAddress = new Uri(healthCareAPIUrl);
+    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+});
+
+builder.Services.AddHttpClient<StatusClient>(client => 
+{
+    client.BaseAddress = new Uri(healthCareAPIUrl);
+    client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+});
 
 var app = builder.Build();
 
@@ -27,6 +55,5 @@ app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
    .AddInteractiveServerRenderMode();
-
 
 app.Run();

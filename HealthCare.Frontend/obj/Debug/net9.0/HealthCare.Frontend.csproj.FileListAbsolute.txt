@@ -16,6 +16,7 @@ D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\HealthCare.Frontend.
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\scopedcss\bundle\HealthCare.Frontend.styles.css
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\scopedcss\projectbundle\HealthCare.Frontend.bundle.scp.css
+D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\compressed\2kar1u2obl-kvs9l8g8ng.gz
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\compressed\owhcs0isjz-rujrsdriu1.gz
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\compressed\o5pra0c97k-rujrsdriu1.gz
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\staticwebassets.build.json
@@ -32,4 +33,3 @@ D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\refint\HealthCare.Fr
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\HealthCare.Frontend.pdb
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\HealthCare.Frontend.genruntimeconfig.cache
 D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\ref\HealthCare.Frontend.dll
-D:\Projects\HealthCare\HealthCare.Frontend\obj\Debug\net9.0\compressed\2kar1u2obl-kvs9l8g8ng.gz
